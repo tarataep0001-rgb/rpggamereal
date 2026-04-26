@@ -14,7 +14,7 @@ export const classSkillFormationExport = {
     status:
       validateClassConfigV1A() && validateSkillConfigV1A() && validateFormationConfigV1A()
         ? "validated_mock"
-        : "invalid",
+        : "mock",
     notes:
       "Phase 13 aggregate view for Class / Skill / Formation config export readiness. Mock/local validation only.",
   }),
