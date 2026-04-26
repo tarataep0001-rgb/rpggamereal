@@ -11,6 +11,10 @@ import { RegionPolicyPanel } from "@/components/admin/RegionPolicyPanel";
 import { RiskFlagPanel } from "@/components/admin/RiskFlagPanel";
 import { SafetyStatusBadge } from "@/components/admin/SafetyStatusBadge";
 import { GameCard } from "@/components/ui/GameCard";
+import { GameStateDebugPanel } from "@/components/game/GameStateDebugPanel";
+import { LocalSaveControls } from "@/components/game/LocalSaveControls";
+import { SaveStatusPanel } from "@/components/game/SaveStatusPanel";
+import { SaveWarningPanel } from "@/components/game/SaveWarningPanel";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 
 const adminTabNames = [
@@ -51,6 +55,10 @@ export function AdminDashboardScreen() {
 
       <AdminRoleLimitPanel />
       <ConfigExportSummaryPanel />
+      <SaveStatusPanel />
+      <LocalSaveControls />
+      <GameStateDebugPanel />
+      <SaveWarningPanel />
       <ClassSkillFormationExportPanel />
       <EquipmentItemDropExportPanel />
       <EnemyBossStageExportPanel />

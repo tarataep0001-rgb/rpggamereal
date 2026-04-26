@@ -1,6 +1,7 @@
 import { LaunchGateChecklist } from "@/components/admin/LaunchGateChecklist";
 import { NoGoStatusPanel } from "@/components/admin/NoGoStatusPanel";
 import { SimulationReadinessPanel } from "@/components/admin/SimulationReadinessPanel";
+import { SaveWarningPanel } from "@/components/game/SaveWarningPanel";
 import { GameCard } from "@/components/ui/GameCard";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { mockPlayer } from "@/data/mockPlayer";
@@ -9,6 +10,7 @@ export function LaunchGateScreen() {
   return (
     <div className="space-y-4 px-4">
       <NoGoStatusPanel />
+      <SaveWarningPanel />
       <LaunchGateChecklist />
       <SimulationReadinessPanel />
       <GameCard>

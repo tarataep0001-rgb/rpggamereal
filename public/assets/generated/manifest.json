@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-26T08:44:09.325Z",
+  "generated_at": "2026-04-26T09:04:25.332Z",
   "generator": "scripts/generate-local-assets.mjs",
   "safety_note": "Original local SVG placeholders only. No external, copyrighted, paid, WLD, payment, or production-money asset behavior.",
   "characters": [
@@ -1316,6 +1316,10 @@
       "path": "/assets/generated/ui/icon_launch_no_go.svg"
     },
     {
+      "id": "icon_local_storage",
+      "path": "/assets/generated/ui/icon_local_storage.svg"
+    },
+    {
       "id": "icon_mail_overflow",
       "path": "/assets/generated/ui/icon_mail_overflow.svg"
     },
@@ -1364,8 +1368,20 @@
       "path": "/assets/generated/ui/icon_mixed_gear_chest.svg"
     },
     {
+      "id": "icon_mock_only",
+      "path": "/assets/generated/ui/icon_mock_only.svg"
+    },
+    {
       "id": "icon_no_duplicate",
       "path": "/assets/generated/ui/icon_no_duplicate.svg"
+    },
+    {
+      "id": "icon_no_ledger",
+      "path": "/assets/generated/ui/icon_no_ledger.svg"
+    },
+    {
+      "id": "icon_no_secrets",
+      "path": "/assets/generated/ui/icon_no_secrets.svg"
     },
     {
       "id": "icon_paid_gem_locked",
@@ -1488,12 +1504,32 @@
       "path": "/assets/generated/ui/icon_salvage.svg"
     },
     {
+      "id": "icon_save_local",
+      "path": "/assets/generated/ui/icon_save_local.svg"
+    },
+    {
+      "id": "icon_save_reset",
+      "path": "/assets/generated/ui/icon_save_reset.svg"
+    },
+    {
+      "id": "icon_save_valid",
+      "path": "/assets/generated/ui/icon_save_valid.svg"
+    },
+    {
+      "id": "icon_save_warning",
+      "path": "/assets/generated/ui/icon_save_warning.svg"
+    },
+    {
       "id": "icon_security_audit_pending",
       "path": "/assets/generated/ui/icon_security_audit_pending.svg"
     },
     {
       "id": "icon_seed_snapshot",
       "path": "/assets/generated/ui/icon_seed_snapshot.svg"
+    },
+    {
+      "id": "icon_server_required",
+      "path": "/assets/generated/ui/icon_server_required.svg"
     },
     {
       "id": "icon_shop_gem",
@@ -1634,6 +1670,10 @@
     {
       "id": "icon_star_full",
       "path": "/assets/generated/ui/icon_star_full.svg"
+    },
+    {
+      "id": "icon_state_debug",
+      "path": "/assets/generated/ui/icon_state_debug.svg"
     },
     {
       "id": "icon_status_bleed",

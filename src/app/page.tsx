@@ -17,6 +17,7 @@ import { ShopScreen } from "@/screens/ShopScreen";
 import { SkillPriorityScreen } from "@/screens/SkillPriorityScreen";
 import { StageMapScreen } from "@/screens/StageMapScreen";
 import { TeamFormationScreen } from "@/screens/TeamFormationScreen";
+import { GameStateProvider } from "@/state/gameStateStore";
 import type { NavTab, ScreenId } from "@/types/game";
 
 const primaryTabs: NavTab[] = [
@@ -136,55 +137,57 @@ export default function Home() {
   };
 
   return (
-    <AppShell activeTab={getActiveTab(screen)} onNavigate={setScreen}>
-      <PageHeader {...meta} />
-      {renderScreen()}
-      <div className="px-4 pt-4">
-        <div className="grid grid-cols-2 gap-2 text-xs">
-          <button
-            className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-slate-200"
-            onClick={() => setScreen("skills")}
-            type="button"
-          >
-            Skill Priority
-          </button>
-          <button
-            className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-slate-200"
-            onClick={() => setScreen("battle")}
-            type="button"
-          >
-            Battle Result
-          </button>
-          <button
-            className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-slate-200"
-            onClick={() => setScreen("idle")}
-            type="button"
-          >
-            Idle Claim
-          </button>
-          <button
-            className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-slate-200"
-            onClick={() => setScreen("shop")}
-            type="button"
-          >
-            Shop
-          </button>
-          <button
-            className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-slate-200"
-            onClick={() => setScreen("export")}
-            type="button"
-          >
-            Export Readiness
-          </button>
-          <button
-            className="rounded-xl border border-rose-300/30 bg-rose-500/10 px-3 py-2 text-rose-100"
-            onClick={() => setScreen("launch")}
-            type="button"
-          >
-            Launch Gate
-          </button>
+    <GameStateProvider>
+      <AppShell activeTab={getActiveTab(screen)} onNavigate={setScreen}>
+        <PageHeader {...meta} />
+        {renderScreen()}
+        <div className="px-4 pt-4">
+          <div className="grid grid-cols-2 gap-2 text-xs">
+            <button
+              className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-slate-200"
+              onClick={() => setScreen("skills")}
+              type="button"
+            >
+              Skill Priority
+            </button>
+            <button
+              className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-slate-200"
+              onClick={() => setScreen("battle")}
+              type="button"
+            >
+              Battle Result
+            </button>
+            <button
+              className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-slate-200"
+              onClick={() => setScreen("idle")}
+              type="button"
+            >
+              Idle Claim
+            </button>
+            <button
+              className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-slate-200"
+              onClick={() => setScreen("shop")}
+              type="button"
+            >
+              Shop
+            </button>
+            <button
+              className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-slate-200"
+              onClick={() => setScreen("export")}
+              type="button"
+            >
+              Export Readiness
+            </button>
+            <button
+              className="rounded-xl border border-rose-300/30 bg-rose-500/10 px-3 py-2 text-rose-100"
+              onClick={() => setScreen("launch")}
+              type="button"
+            >
+              Launch Gate
+            </button>
+          </div>
         </div>
-      </div>
-    </AppShell>
+      </AppShell>
+    </GameStateProvider>
   );
 }

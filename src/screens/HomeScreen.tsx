@@ -1,4 +1,6 @@
 import type { ScreenId } from "@/types/game";
+import { SaveStatusPanel } from "@/components/game/SaveStatusPanel";
+import { SaveWarningPanel } from "@/components/game/SaveWarningPanel";
 import {
   CurrencySummaryCard,
   HeroStatusCard,
@@ -19,6 +21,7 @@ export function HomeScreen({ onNavigate }: HomeScreenProps) {
   return (
     <div className="space-y-4 px-4">
       <HeroStatusCard />
+      <SaveStatusPanel />
       <CurrencySummaryCard />
       <MainCharacterPreviewCard />
       <TeamSnapshotCard onNavigate={onNavigate} />
@@ -26,6 +29,7 @@ export function HomeScreen({ onNavigate }: HomeScreenProps) {
       <IdleRewardCard onNavigate={onNavigate} />
       <QuickActionGrid onNavigate={onNavigate} />
       <LockedFeaturePanel />
+      <SaveWarningPanel />
       <ReadinessStatusPanel />
     </div>
   );

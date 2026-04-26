@@ -1136,6 +1136,16 @@ export const mockAssets: MockAssetReference[] = [
     "icon_config_validation",
     "icon_config_hash",
     "icon_config_blocked",
+    "icon_save_local",
+    "icon_save_valid",
+    "icon_save_warning",
+    "icon_save_reset",
+    "icon_state_debug",
+    "icon_local_storage",
+    "icon_mock_only",
+    "icon_server_required",
+    "icon_no_secrets",
+    "icon_no_ledger",
   ].map((assetId) =>
     asset({
       asset_id: assetId,
