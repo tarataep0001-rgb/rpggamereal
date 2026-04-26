@@ -1,0 +1,31 @@
+import type { PlayerProfile } from "@/types/game";
+
+export const mockPlayer: PlayerProfile = {
+  playerName: "Hero",
+  mainClass: "Swordsman",
+  level: 12,
+  effectiveLevelCap: 50,
+  gold: 12500,
+  freeGem: 120,
+  paidGem: 0,
+  paidGemGachaEnabled: false,
+  wldWithdrawEnabled: false,
+  wldRewardRankingEnabled: false,
+  currentChapter: 1,
+  highestStageCleared: "1-5",
+  idleStage: "1-5",
+  inventorySlots: 100,
+  usedInventorySlots: 32,
+  mailboxCount: 3,
+  teamPower: 18500,
+  launchStatus: "NO-GO",
+  featureFlags: {
+    enableWldWithdraw: false,
+    enableWldRewardRanking: false,
+    enablePaidGemGacha: false,
+    enableBox2: false,
+    enableBox3: false,
+    enableClass2: false,
+    enableClass3: false,
+  },
+};

@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "generate:assets": "node scripts/generate-local-assets.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"

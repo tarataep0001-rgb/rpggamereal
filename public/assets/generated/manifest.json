@@ -1,0 +1,1839 @@
+{
+  "generated_at": "2026-04-26T03:50:41.822Z",
+  "generator": "scripts/generate-local-assets.mjs",
+  "safety_note": "Original local SVG placeholders only. No external, copyrighted, paid, WLD, payment, or production-money asset behavior.",
+  "characters": [
+    {
+      "id": "main_hero",
+      "name": "Hero",
+      "grade": "Epic",
+      "element": "Fire",
+      "className": "Swordsman",
+      "path": "/assets/generated/characters/main_hero.svg"
+    },
+    {
+      "id": "ch_common_sword_fire_guard",
+      "name": "Fire Guard",
+      "grade": "Common",
+      "element": "Fire",
+      "className": "Swordsman",
+      "path": "/assets/generated/characters/ch_common_sword_fire_guard.svg"
+    },
+    {
+      "id": "ch_common_archer_wind_shot",
+      "name": "Wind Shot",
+      "grade": "Common",
+      "element": "Wind",
+      "className": "Archer",
+      "path": "/assets/generated/characters/ch_common_archer_wind_shot.svg"
+    },
+    {
+      "id": "ch_common_thief_dark_cut",
+      "name": "Dark Cut",
+      "grade": "Common",
+      "element": "Dark",
+      "className": "Thief",
+      "path": "/assets/generated/characters/ch_common_thief_dark_cut.svg"
+    },
+    {
+      "id": "ch_common_priest_light_aid",
+      "name": "Light Aid",
+      "grade": "Common",
+      "element": "Light",
+      "className": "Priest",
+      "path": "/assets/generated/characters/ch_common_priest_light_aid.svg"
+    },
+    {
+      "id": "ch_common_mage_fire_spark",
+      "name": "Fire Spark",
+      "grade": "Common",
+      "element": "Fire",
+      "className": "Mage",
+      "path": "/assets/generated/characters/ch_common_mage_fire_spark.svg"
+    },
+    {
+      "id": "ch_uncommon_sword_earth_guard",
+      "name": "Earth Guard",
+      "grade": "Uncommon",
+      "element": "Earth",
+      "className": "Swordsman",
+      "path": "/assets/generated/characters/ch_uncommon_sword_earth_guard.svg"
+    },
+    {
+      "id": "ch_uncommon_archer_fire_burst",
+      "name": "Fire Burst",
+      "grade": "Uncommon",
+      "element": "Fire",
+      "className": "Archer",
+      "path": "/assets/generated/characters/ch_uncommon_archer_fire_burst.svg"
+    },
+    {
+      "id": "ch_uncommon_thief_wind_dash",
+      "name": "Wind Dash",
+      "grade": "Uncommon",
+      "element": "Wind",
+      "className": "Thief",
+      "path": "/assets/generated/characters/ch_uncommon_thief_wind_dash.svg"
+    },
+    {
+      "id": "ch_uncommon_priest_water_care",
+      "name": "Water Care",
+      "grade": "Uncommon",
+      "element": "Water",
+      "className": "Priest",
+      "path": "/assets/generated/characters/ch_uncommon_priest_water_care.svg"
+    },
+    {
+      "id": "ch_uncommon_mage_water_wave",
+      "name": "Water Wave",
+      "grade": "Uncommon",
+      "element": "Water",
+      "className": "Mage",
+      "path": "/assets/generated/characters/ch_uncommon_mage_water_wave.svg"
+    },
+    {
+      "id": "ch_rare_sword_light_vanguard",
+      "name": "Light Vanguard",
+      "grade": "Rare",
+      "element": "Light",
+      "className": "Swordsman",
+      "path": "/assets/generated/characters/ch_rare_sword_light_vanguard.svg"
+    },
+    {
+      "id": "ch_rare_archer_wind_hunter",
+      "name": "Wind Hunter",
+      "grade": "Rare",
+      "element": "Wind",
+      "className": "Archer",
+      "path": "/assets/generated/characters/ch_rare_archer_wind_hunter.svg"
+    },
+    {
+      "id": "ch_rare_thief_dark_stalker",
+      "name": "Dark Stalker",
+      "grade": "Rare",
+      "element": "Dark",
+      "className": "Thief",
+      "path": "/assets/generated/characters/ch_rare_thief_dark_stalker.svg"
+    },
+    {
+      "id": "ch_rare_priest_light_oracle",
+      "name": "Light Oracle",
+      "grade": "Rare",
+      "element": "Light",
+      "className": "Priest",
+      "path": "/assets/generated/characters/ch_rare_priest_light_oracle.svg"
+    },
+    {
+      "id": "ch_rare_mage_earth_sage",
+      "name": "Earth Sage",
+      "grade": "Rare",
+      "element": "Earth",
+      "className": "Mage",
+      "path": "/assets/generated/characters/ch_rare_mage_earth_sage.svg"
+    }
+  ],
+  "skills": [
+    {
+      "id": "swordsman_slash_01",
+      "name": "Fan Pha",
+      "className": "Swordsman",
+      "element": "Neutral",
+      "skillType": "attack",
+      "path": "/assets/generated/skills/swordsman_slash_01.svg"
+    },
+    {
+      "id": "swordsman_guard_break_02",
+      "name": "Guard Break",
+      "className": "Swordsman",
+      "element": "Neutral",
+      "skillType": "debuff",
+      "path": "/assets/generated/skills/swordsman_guard_break_02.svg"
+    },
+    {
+      "id": "swordsman_brave_guard_03",
+      "name": "Brave Guard",
+      "className": "Swordsman",
+      "element": "Neutral",
+      "skillType": "shield",
+      "path": "/assets/generated/skills/swordsman_brave_guard_03.svg"
+    },
+    {
+      "id": "archer_precise_shot_01",
+      "name": "Precise Shot",
+      "className": "Archer",
+      "element": "Neutral",
+      "skillType": "attack",
+      "path": "/assets/generated/skills/archer_precise_shot_01.svg"
+    },
+    {
+      "id": "archer_arrow_rain_02",
+      "name": "Arrow Rain",
+      "className": "Archer",
+      "element": "Neutral",
+      "skillType": "attack",
+      "path": "/assets/generated/skills/archer_arrow_rain_02.svg"
+    },
+    {
+      "id": "archer_eagle_eye_03",
+      "name": "Eagle Eye",
+      "className": "Archer",
+      "element": "Neutral",
+      "skillType": "buff",
+      "path": "/assets/generated/skills/archer_eagle_eye_03.svg"
+    },
+    {
+      "id": "thief_quick_stab_01",
+      "name": "Quick Stab",
+      "className": "Thief",
+      "element": "Neutral",
+      "skillType": "attack",
+      "path": "/assets/generated/skills/thief_quick_stab_01.svg"
+    },
+    {
+      "id": "thief_backstab_02",
+      "name": "Backstab",
+      "className": "Thief",
+      "element": "Dark",
+      "skillType": "attack",
+      "path": "/assets/generated/skills/thief_backstab_02.svg"
+    },
+    {
+      "id": "thief_smoke_step_03",
+      "name": "Smoke Step",
+      "className": "Thief",
+      "element": "Dark",
+      "skillType": "buff",
+      "path": "/assets/generated/skills/thief_smoke_step_03.svg"
+    },
+    {
+      "id": "priest_light_smite_01",
+      "name": "Light Smite",
+      "className": "Priest",
+      "element": "Light",
+      "skillType": "attack",
+      "path": "/assets/generated/skills/priest_light_smite_01.svg"
+    },
+    {
+      "id": "priest_minor_heal_02",
+      "name": "Minor Heal",
+      "className": "Priest",
+      "element": "Light",
+      "skillType": "heal",
+      "path": "/assets/generated/skills/priest_minor_heal_02.svg"
+    },
+    {
+      "id": "priest_holy_shield_03",
+      "name": "Holy Shield",
+      "className": "Priest",
+      "element": "Light",
+      "skillType": "shield",
+      "path": "/assets/generated/skills/priest_holy_shield_03.svg"
+    },
+    {
+      "id": "mage_fire_bolt_01",
+      "name": "Fire Bolt",
+      "className": "Mage",
+      "element": "Fire",
+      "skillType": "attack",
+      "path": "/assets/generated/skills/mage_fire_bolt_01.svg"
+    },
+    {
+      "id": "mage_frost_wave_02",
+      "name": "Frost Wave",
+      "className": "Mage",
+      "element": "Water",
+      "skillType": "debuff",
+      "path": "/assets/generated/skills/mage_frost_wave_02.svg"
+    },
+    {
+      "id": "mage_arcane_burst_03",
+      "name": "Arcane Burst",
+      "className": "Mage",
+      "element": "Neutral",
+      "skillType": "attack",
+      "path": "/assets/generated/skills/mage_arcane_burst_03.svg"
+    }
+  ],
+  "equipment": [
+    {
+      "id": "gear_sword_t1_common",
+      "family": "sword",
+      "tier": 1,
+      "grade": "Common",
+      "path": "/assets/generated/equipment/gear_sword_t1_common.svg"
+    },
+    {
+      "id": "gear_sword_t1_uncommon",
+      "family": "sword",
+      "tier": 1,
+      "grade": "Uncommon",
+      "path": "/assets/generated/equipment/gear_sword_t1_uncommon.svg"
+    },
+    {
+      "id": "gear_sword_t1_rare",
+      "family": "sword",
+      "tier": 1,
+      "grade": "Rare",
+      "path": "/assets/generated/equipment/gear_sword_t1_rare.svg"
+    },
+    {
+      "id": "gear_sword_t2_common",
+      "family": "sword",
+      "tier": 2,
+      "grade": "Common",
+      "path": "/assets/generated/equipment/gear_sword_t2_common.svg"
+    },
+    {
+      "id": "gear_sword_t2_uncommon",
+      "family": "sword",
+      "tier": 2,
+      "grade": "Uncommon",
+      "path": "/assets/generated/equipment/gear_sword_t2_uncommon.svg"
+    },
+    {
+      "id": "gear_sword_t2_rare",
+      "family": "sword",
+      "tier": 2,
+      "grade": "Rare",
+      "path": "/assets/generated/equipment/gear_sword_t2_rare.svg"
+    },
+    {
+      "id": "gear_bow_t1_common",
+      "family": "bow",
+      "tier": 1,
+      "grade": "Common",
+      "path": "/assets/generated/equipment/gear_bow_t1_common.svg"
+    },
+    {
+      "id": "gear_bow_t1_uncommon",
+      "family": "bow",
+      "tier": 1,
+      "grade": "Uncommon",
+      "path": "/assets/generated/equipment/gear_bow_t1_uncommon.svg"
+    },
+    {
+      "id": "gear_bow_t1_rare",
+      "family": "bow",
+      "tier": 1,
+      "grade": "Rare",
+      "path": "/assets/generated/equipment/gear_bow_t1_rare.svg"
+    },
+    {
+      "id": "gear_bow_t2_common",
+      "family": "bow",
+      "tier": 2,
+      "grade": "Common",
+      "path": "/assets/generated/equipment/gear_bow_t2_common.svg"
+    },
+    {
+      "id": "gear_bow_t2_uncommon",
+      "family": "bow",
+      "tier": 2,
+      "grade": "Uncommon",
+      "path": "/assets/generated/equipment/gear_bow_t2_uncommon.svg"
+    },
+    {
+      "id": "gear_bow_t2_rare",
+      "family": "bow",
+      "tier": 2,
+      "grade": "Rare",
+      "path": "/assets/generated/equipment/gear_bow_t2_rare.svg"
+    },
+    {
+      "id": "gear_dagger_t1_common",
+      "family": "dagger",
+      "tier": 1,
+      "grade": "Common",
+      "path": "/assets/generated/equipment/gear_dagger_t1_common.svg"
+    },
+    {
+      "id": "gear_dagger_t1_uncommon",
+      "family": "dagger",
+      "tier": 1,
+      "grade": "Uncommon",
+      "path": "/assets/generated/equipment/gear_dagger_t1_uncommon.svg"
+    },
+    {
+      "id": "gear_dagger_t1_rare",
+      "family": "dagger",
+      "tier": 1,
+      "grade": "Rare",
+      "path": "/assets/generated/equipment/gear_dagger_t1_rare.svg"
+    },
+    {
+      "id": "gear_dagger_t2_common",
+      "family": "dagger",
+      "tier": 2,
+      "grade": "Common",
+      "path": "/assets/generated/equipment/gear_dagger_t2_common.svg"
+    },
+    {
+      "id": "gear_dagger_t2_uncommon",
+      "family": "dagger",
+      "tier": 2,
+      "grade": "Uncommon",
+      "path": "/assets/generated/equipment/gear_dagger_t2_uncommon.svg"
+    },
+    {
+      "id": "gear_dagger_t2_rare",
+      "family": "dagger",
+      "tier": 2,
+      "grade": "Rare",
+      "path": "/assets/generated/equipment/gear_dagger_t2_rare.svg"
+    },
+    {
+      "id": "gear_staff_t1_common",
+      "family": "staff",
+      "tier": 1,
+      "grade": "Common",
+      "path": "/assets/generated/equipment/gear_staff_t1_common.svg"
+    },
+    {
+      "id": "gear_staff_t1_uncommon",
+      "family": "staff",
+      "tier": 1,
+      "grade": "Uncommon",
+      "path": "/assets/generated/equipment/gear_staff_t1_uncommon.svg"
+    },
+    {
+      "id": "gear_staff_t1_rare",
+      "family": "staff",
+      "tier": 1,
+      "grade": "Rare",
+      "path": "/assets/generated/equipment/gear_staff_t1_rare.svg"
+    },
+    {
+      "id": "gear_staff_t2_common",
+      "family": "staff",
+      "tier": 2,
+      "grade": "Common",
+      "path": "/assets/generated/equipment/gear_staff_t2_common.svg"
+    },
+    {
+      "id": "gear_staff_t2_uncommon",
+      "family": "staff",
+      "tier": 2,
+      "grade": "Uncommon",
+      "path": "/assets/generated/equipment/gear_staff_t2_uncommon.svg"
+    },
+    {
+      "id": "gear_staff_t2_rare",
+      "family": "staff",
+      "tier": 2,
+      "grade": "Rare",
+      "path": "/assets/generated/equipment/gear_staff_t2_rare.svg"
+    },
+    {
+      "id": "gear_heavy_armor_t1_common",
+      "family": "heavy_armor",
+      "tier": 1,
+      "grade": "Common",
+      "path": "/assets/generated/equipment/gear_heavy_armor_t1_common.svg"
+    },
+    {
+      "id": "gear_heavy_armor_t1_uncommon",
+      "family": "heavy_armor",
+      "tier": 1,
+      "grade": "Uncommon",
+      "path": "/assets/generated/equipment/gear_heavy_armor_t1_uncommon.svg"
+    },
+    {
+      "id": "gear_heavy_armor_t1_rare",
+      "family": "heavy_armor",
+      "tier": 1,
+      "grade": "Rare",
+      "path": "/assets/generated/equipment/gear_heavy_armor_t1_rare.svg"
+    },
+    {
+      "id": "gear_heavy_armor_t2_common",
+      "family": "heavy_armor",
+      "tier": 2,
+      "grade": "Common",
+      "path": "/assets/generated/equipment/gear_heavy_armor_t2_common.svg"
+    },
+    {
+      "id": "gear_heavy_armor_t2_uncommon",
+      "family": "heavy_armor",
+      "tier": 2,
+      "grade": "Uncommon",
+      "path": "/assets/generated/equipment/gear_heavy_armor_t2_uncommon.svg"
+    },
+    {
+      "id": "gear_heavy_armor_t2_rare",
+      "family": "heavy_armor",
+      "tier": 2,
+      "grade": "Rare",
+      "path": "/assets/generated/equipment/gear_heavy_armor_t2_rare.svg"
+    },
+    {
+      "id": "gear_light_armor_t1_common",
+      "family": "light_armor",
+      "tier": 1,
+      "grade": "Common",
+      "path": "/assets/generated/equipment/gear_light_armor_t1_common.svg"
+    },
+    {
+      "id": "gear_light_armor_t1_uncommon",
+      "family": "light_armor",
+      "tier": 1,
+      "grade": "Uncommon",
+      "path": "/assets/generated/equipment/gear_light_armor_t1_uncommon.svg"
+    },
+    {
+      "id": "gear_light_armor_t1_rare",
+      "family": "light_armor",
+      "tier": 1,
+      "grade": "Rare",
+      "path": "/assets/generated/equipment/gear_light_armor_t1_rare.svg"
+    },
+    {
+      "id": "gear_light_armor_t2_common",
+      "family": "light_armor",
+      "tier": 2,
+      "grade": "Common",
+      "path": "/assets/generated/equipment/gear_light_armor_t2_common.svg"
+    },
+    {
+      "id": "gear_light_armor_t2_uncommon",
+      "family": "light_armor",
+      "tier": 2,
+      "grade": "Uncommon",
+      "path": "/assets/generated/equipment/gear_light_armor_t2_uncommon.svg"
+    },
+    {
+      "id": "gear_light_armor_t2_rare",
+      "family": "light_armor",
+      "tier": 2,
+      "grade": "Rare",
+      "path": "/assets/generated/equipment/gear_light_armor_t2_rare.svg"
+    },
+    {
+      "id": "gear_robe_t1_common",
+      "family": "robe",
+      "tier": 1,
+      "grade": "Common",
+      "path": "/assets/generated/equipment/gear_robe_t1_common.svg"
+    },
+    {
+      "id": "gear_robe_t1_uncommon",
+      "family": "robe",
+      "tier": 1,
+      "grade": "Uncommon",
+      "path": "/assets/generated/equipment/gear_robe_t1_uncommon.svg"
+    },
+    {
+      "id": "gear_robe_t1_rare",
+      "family": "robe",
+      "tier": 1,
+      "grade": "Rare",
+      "path": "/assets/generated/equipment/gear_robe_t1_rare.svg"
+    },
+    {
+      "id": "gear_robe_t2_common",
+      "family": "robe",
+      "tier": 2,
+      "grade": "Common",
+      "path": "/assets/generated/equipment/gear_robe_t2_common.svg"
+    },
+    {
+      "id": "gear_robe_t2_uncommon",
+      "family": "robe",
+      "tier": 2,
+      "grade": "Uncommon",
+      "path": "/assets/generated/equipment/gear_robe_t2_uncommon.svg"
+    },
+    {
+      "id": "gear_robe_t2_rare",
+      "family": "robe",
+      "tier": 2,
+      "grade": "Rare",
+      "path": "/assets/generated/equipment/gear_robe_t2_rare.svg"
+    },
+    {
+      "id": "gear_helmet_t1_common",
+      "family": "helmet",
+      "tier": 1,
+      "grade": "Common",
+      "path": "/assets/generated/equipment/gear_helmet_t1_common.svg"
+    },
+    {
+      "id": "gear_helmet_t1_uncommon",
+      "family": "helmet",
+      "tier": 1,
+      "grade": "Uncommon",
+      "path": "/assets/generated/equipment/gear_helmet_t1_uncommon.svg"
+    },
+    {
+      "id": "gear_helmet_t1_rare",
+      "family": "helmet",
+      "tier": 1,
+      "grade": "Rare",
+      "path": "/assets/generated/equipment/gear_helmet_t1_rare.svg"
+    },
+    {
+      "id": "gear_helmet_t2_common",
+      "family": "helmet",
+      "tier": 2,
+      "grade": "Common",
+      "path": "/assets/generated/equipment/gear_helmet_t2_common.svg"
+    },
+    {
+      "id": "gear_helmet_t2_uncommon",
+      "family": "helmet",
+      "tier": 2,
+      "grade": "Uncommon",
+      "path": "/assets/generated/equipment/gear_helmet_t2_uncommon.svg"
+    },
+    {
+      "id": "gear_helmet_t2_rare",
+      "family": "helmet",
+      "tier": 2,
+      "grade": "Rare",
+      "path": "/assets/generated/equipment/gear_helmet_t2_rare.svg"
+    },
+    {
+      "id": "gear_gloves_t1_common",
+      "family": "gloves",
+      "tier": 1,
+      "grade": "Common",
+      "path": "/assets/generated/equipment/gear_gloves_t1_common.svg"
+    },
+    {
+      "id": "gear_gloves_t1_uncommon",
+      "family": "gloves",
+      "tier": 1,
+      "grade": "Uncommon",
+      "path": "/assets/generated/equipment/gear_gloves_t1_uncommon.svg"
+    },
+    {
+      "id": "gear_gloves_t1_rare",
+      "family": "gloves",
+      "tier": 1,
+      "grade": "Rare",
+      "path": "/assets/generated/equipment/gear_gloves_t1_rare.svg"
+    },
+    {
+      "id": "gear_gloves_t2_common",
+      "family": "gloves",
+      "tier": 2,
+      "grade": "Common",
+      "path": "/assets/generated/equipment/gear_gloves_t2_common.svg"
+    },
+    {
+      "id": "gear_gloves_t2_uncommon",
+      "family": "gloves",
+      "tier": 2,
+      "grade": "Uncommon",
+      "path": "/assets/generated/equipment/gear_gloves_t2_uncommon.svg"
+    },
+    {
+      "id": "gear_gloves_t2_rare",
+      "family": "gloves",
+      "tier": 2,
+      "grade": "Rare",
+      "path": "/assets/generated/equipment/gear_gloves_t2_rare.svg"
+    },
+    {
+      "id": "gear_boots_t1_common",
+      "family": "boots",
+      "tier": 1,
+      "grade": "Common",
+      "path": "/assets/generated/equipment/gear_boots_t1_common.svg"
+    },
+    {
+      "id": "gear_boots_t1_uncommon",
+      "family": "boots",
+      "tier": 1,
+      "grade": "Uncommon",
+      "path": "/assets/generated/equipment/gear_boots_t1_uncommon.svg"
+    },
+    {
+      "id": "gear_boots_t1_rare",
+      "family": "boots",
+      "tier": 1,
+      "grade": "Rare",
+      "path": "/assets/generated/equipment/gear_boots_t1_rare.svg"
+    },
+    {
+      "id": "gear_boots_t2_common",
+      "family": "boots",
+      "tier": 2,
+      "grade": "Common",
+      "path": "/assets/generated/equipment/gear_boots_t2_common.svg"
+    },
+    {
+      "id": "gear_boots_t2_uncommon",
+      "family": "boots",
+      "tier": 2,
+      "grade": "Uncommon",
+      "path": "/assets/generated/equipment/gear_boots_t2_uncommon.svg"
+    },
+    {
+      "id": "gear_boots_t2_rare",
+      "family": "boots",
+      "tier": 2,
+      "grade": "Rare",
+      "path": "/assets/generated/equipment/gear_boots_t2_rare.svg"
+    },
+    {
+      "id": "gear_necklace_t1_common",
+      "family": "necklace",
+      "tier": 1,
+      "grade": "Common",
+      "path": "/assets/generated/equipment/gear_necklace_t1_common.svg"
+    },
+    {
+      "id": "gear_necklace_t1_uncommon",
+      "family": "necklace",
+      "tier": 1,
+      "grade": "Uncommon",
+      "path": "/assets/generated/equipment/gear_necklace_t1_uncommon.svg"
+    },
+    {
+      "id": "gear_necklace_t1_rare",
+      "family": "necklace",
+      "tier": 1,
+      "grade": "Rare",
+      "path": "/assets/generated/equipment/gear_necklace_t1_rare.svg"
+    },
+    {
+      "id": "gear_necklace_t2_common",
+      "family": "necklace",
+      "tier": 2,
+      "grade": "Common",
+      "path": "/assets/generated/equipment/gear_necklace_t2_common.svg"
+    },
+    {
+      "id": "gear_necklace_t2_uncommon",
+      "family": "necklace",
+      "tier": 2,
+      "grade": "Uncommon",
+      "path": "/assets/generated/equipment/gear_necklace_t2_uncommon.svg"
+    },
+    {
+      "id": "gear_necklace_t2_rare",
+      "family": "necklace",
+      "tier": 2,
+      "grade": "Rare",
+      "path": "/assets/generated/equipment/gear_necklace_t2_rare.svg"
+    },
+    {
+      "id": "gear_ring_t1_common",
+      "family": "ring",
+      "tier": 1,
+      "grade": "Common",
+      "path": "/assets/generated/equipment/gear_ring_t1_common.svg"
+    },
+    {
+      "id": "gear_ring_t1_uncommon",
+      "family": "ring",
+      "tier": 1,
+      "grade": "Uncommon",
+      "path": "/assets/generated/equipment/gear_ring_t1_uncommon.svg"
+    },
+    {
+      "id": "gear_ring_t1_rare",
+      "family": "ring",
+      "tier": 1,
+      "grade": "Rare",
+      "path": "/assets/generated/equipment/gear_ring_t1_rare.svg"
+    },
+    {
+      "id": "gear_ring_t2_common",
+      "family": "ring",
+      "tier": 2,
+      "grade": "Common",
+      "path": "/assets/generated/equipment/gear_ring_t2_common.svg"
+    },
+    {
+      "id": "gear_ring_t2_uncommon",
+      "family": "ring",
+      "tier": 2,
+      "grade": "Uncommon",
+      "path": "/assets/generated/equipment/gear_ring_t2_uncommon.svg"
+    },
+    {
+      "id": "gear_ring_t2_rare",
+      "family": "ring",
+      "tier": 2,
+      "grade": "Rare",
+      "path": "/assets/generated/equipment/gear_ring_t2_rare.svg"
+    },
+    {
+      "id": "gear_charm_t1_common",
+      "family": "charm",
+      "tier": 1,
+      "grade": "Common",
+      "path": "/assets/generated/equipment/gear_charm_t1_common.svg"
+    },
+    {
+      "id": "gear_charm_t1_uncommon",
+      "family": "charm",
+      "tier": 1,
+      "grade": "Uncommon",
+      "path": "/assets/generated/equipment/gear_charm_t1_uncommon.svg"
+    },
+    {
+      "id": "gear_charm_t1_rare",
+      "family": "charm",
+      "tier": 1,
+      "grade": "Rare",
+      "path": "/assets/generated/equipment/gear_charm_t1_rare.svg"
+    },
+    {
+      "id": "gear_charm_t2_common",
+      "family": "charm",
+      "tier": 2,
+      "grade": "Common",
+      "path": "/assets/generated/equipment/gear_charm_t2_common.svg"
+    },
+    {
+      "id": "gear_charm_t2_uncommon",
+      "family": "charm",
+      "tier": 2,
+      "grade": "Uncommon",
+      "path": "/assets/generated/equipment/gear_charm_t2_uncommon.svg"
+    },
+    {
+      "id": "gear_charm_t2_rare",
+      "family": "charm",
+      "tier": 2,
+      "grade": "Rare",
+      "path": "/assets/generated/equipment/gear_charm_t2_rare.svg"
+    }
+  ],
+  "uiParts": [
+    {
+      "id": "bg_battle_result_defeat",
+      "path": "/assets/generated/ui/bg_battle_result_defeat.svg"
+    },
+    {
+      "id": "bg_battle_result_victory",
+      "path": "/assets/generated/ui/bg_battle_result_victory.svg"
+    },
+    {
+      "id": "bg_chapter_1_spark_forest",
+      "path": "/assets/generated/ui/bg_chapter_1_spark_forest.svg"
+    },
+    {
+      "id": "bg_chapter_2_ash_river",
+      "path": "/assets/generated/ui/bg_chapter_2_ash_river.svg"
+    },
+    {
+      "id": "bg_chapter_3_stone_valley",
+      "path": "/assets/generated/ui/bg_chapter_3_stone_valley.svg"
+    },
+    {
+      "id": "bg_chapter_4_stone_marsh",
+      "path": "/assets/generated/ui/bg_chapter_4_stone_marsh.svg"
+    },
+    {
+      "id": "bg_chapter_5_light_shadow_temple",
+      "path": "/assets/generated/ui/bg_chapter_5_light_shadow_temple.svg"
+    },
+    {
+      "id": "bg_emergency_pause_panel",
+      "path": "/assets/generated/ui/bg_emergency_pause_panel.svg"
+    },
+    {
+      "id": "bg_formation_board_dark_fantasy",
+      "path": "/assets/generated/ui/bg_formation_board_dark_fantasy.svg"
+    },
+    {
+      "id": "bg_gacha_box_1_fantasy",
+      "path": "/assets/generated/ui/bg_gacha_box_1_fantasy.svg"
+    },
+    {
+      "id": "bg_guild_hall",
+      "path": "/assets/generated/ui/bg_guild_hall.svg"
+    },
+    {
+      "id": "bg_idle_claim_fantasy",
+      "path": "/assets/generated/ui/bg_idle_claim_fantasy.svg"
+    },
+    {
+      "id": "bg_shop_gold_market",
+      "path": "/assets/generated/ui/bg_shop_gold_market.svg"
+    },
+    {
+      "id": "card_unit_archer_backline",
+      "path": "/assets/generated/ui/card_unit_archer_backline.svg"
+    },
+    {
+      "id": "card_unit_priest_support",
+      "path": "/assets/generated/ui/card_unit_priest_support.svg"
+    },
+    {
+      "id": "card_unit_swordsman_front",
+      "path": "/assets/generated/ui/card_unit_swordsman_front.svg"
+    },
+    {
+      "id": "card_unit_thief_speed",
+      "path": "/assets/generated/ui/card_unit_thief_speed.svg"
+    },
+    {
+      "id": "chapter_1_background",
+      "path": "/assets/generated/ui/chapter_1_background.svg"
+    },
+    {
+      "id": "frame_active_formation_bonus",
+      "path": "/assets/generated/ui/frame_active_formation_bonus.svg"
+    },
+    {
+      "id": "frame_result_dark",
+      "path": "/assets/generated/ui/frame_result_dark.svg"
+    },
+    {
+      "id": "frame_result_gold",
+      "path": "/assets/generated/ui/frame_result_gold.svg"
+    },
+    {
+      "id": "hero_portrait_swordsman",
+      "path": "/assets/generated/ui/hero_portrait_swordsman.svg"
+    },
+    {
+      "id": "icon_admin_audit_log",
+      "path": "/assets/generated/ui/icon_admin_audit_log.svg"
+    },
+    {
+      "id": "icon_admin_battle_log",
+      "path": "/assets/generated/ui/icon_admin_battle_log.svg"
+    },
+    {
+      "id": "icon_admin_config",
+      "path": "/assets/generated/ui/icon_admin_config.svg"
+    },
+    {
+      "id": "icon_admin_dashboard",
+      "path": "/assets/generated/ui/icon_admin_dashboard.svg"
+    },
+    {
+      "id": "icon_admin_gacha_log",
+      "path": "/assets/generated/ui/icon_admin_gacha_log.svg"
+    },
+    {
+      "id": "icon_admin_ledger_locked",
+      "path": "/assets/generated/ui/icon_admin_ledger_locked.svg"
+    },
+    {
+      "id": "icon_admin_reward_pool",
+      "path": "/assets/generated/ui/icon_admin_reward_pool.svg"
+    },
+    {
+      "id": "icon_admin_user",
+      "path": "/assets/generated/ui/icon_admin_user.svg"
+    },
+    {
+      "id": "icon_admin_withdraw_disabled",
+      "path": "/assets/generated/ui/icon_admin_withdraw_disabled.svg"
+    },
+    {
+      "id": "icon_antibreak_charm_locked",
+      "path": "/assets/generated/ui/icon_antibreak_charm_locked.svg"
+    },
+    {
+      "id": "icon_auto_farm",
+      "path": "/assets/generated/ui/icon_auto_farm.svg"
+    },
+    {
+      "id": "icon_boss_contribution",
+      "path": "/assets/generated/ui/icon_boss_contribution.svg"
+    },
+    {
+      "id": "icon_boss_damage",
+      "path": "/assets/generated/ui/icon_boss_damage.svg"
+    },
+    {
+      "id": "icon_boss_hp",
+      "path": "/assets/generated/ui/icon_boss_hp.svg"
+    },
+    {
+      "id": "icon_boss_kill_reward",
+      "path": "/assets/generated/ui/icon_boss_kill_reward.svg"
+    },
+    {
+      "id": "icon_boss_main",
+      "path": "/assets/generated/ui/icon_boss_main.svg"
+    },
+    {
+      "id": "icon_boss_mini",
+      "path": "/assets/generated/ui/icon_boss_mini.svg"
+    },
+    {
+      "id": "icon_class_archer",
+      "path": "/assets/generated/ui/icon_class_archer.svg"
+    },
+    {
+      "id": "icon_class_mage",
+      "path": "/assets/generated/ui/icon_class_mage.svg"
+    },
+    {
+      "id": "icon_class_priest",
+      "path": "/assets/generated/ui/icon_class_priest.svg"
+    },
+    {
+      "id": "icon_class_swordsman",
+      "path": "/assets/generated/ui/icon_class_swordsman.svg"
+    },
+    {
+      "id": "icon_class_thief",
+      "path": "/assets/generated/ui/icon_class_thief.svg"
+    },
+    {
+      "id": "icon_config_blocked",
+      "path": "/assets/generated/ui/icon_config_blocked.svg"
+    },
+    {
+      "id": "icon_config_dependency",
+      "path": "/assets/generated/ui/icon_config_dependency.svg"
+    },
+    {
+      "id": "icon_config_hash",
+      "path": "/assets/generated/ui/icon_config_hash.svg"
+    },
+    {
+      "id": "icon_config_manifest",
+      "path": "/assets/generated/ui/icon_config_manifest.svg"
+    },
+    {
+      "id": "icon_config_validation",
+      "path": "/assets/generated/ui/icon_config_validation.svg"
+    },
+    {
+      "id": "icon_config_version",
+      "path": "/assets/generated/ui/icon_config_version.svg"
+    },
+    {
+      "id": "icon_damage_crit",
+      "path": "/assets/generated/ui/icon_damage_crit.svg"
+    },
+    {
+      "id": "icon_damage_magic",
+      "path": "/assets/generated/ui/icon_damage_magic.svg"
+    },
+    {
+      "id": "icon_damage_overkill",
+      "path": "/assets/generated/ui/icon_damage_overkill.svg"
+    },
+    {
+      "id": "icon_damage_physical",
+      "path": "/assets/generated/ui/icon_damage_physical.svg"
+    },
+    {
+      "id": "icon_damage_shield",
+      "path": "/assets/generated/ui/icon_damage_shield.svg"
+    },
+    {
+      "id": "icon_defeat_shadow",
+      "path": "/assets/generated/ui/icon_defeat_shadow.svg"
+    },
+    {
+      "id": "icon_drop_gear",
+      "path": "/assets/generated/ui/icon_drop_gear.svg"
+    },
+    {
+      "id": "icon_drop_gold",
+      "path": "/assets/generated/ui/icon_drop_gold.svg"
+    },
+    {
+      "id": "icon_drop_skill_book",
+      "path": "/assets/generated/ui/icon_drop_skill_book.svg"
+    },
+    {
+      "id": "icon_drop_star_chest",
+      "path": "/assets/generated/ui/icon_drop_star_chest.svg"
+    },
+    {
+      "id": "icon_drop_stone",
+      "path": "/assets/generated/ui/icon_drop_stone.svg"
+    },
+    {
+      "id": "icon_drop_xp",
+      "path": "/assets/generated/ui/icon_drop_xp.svg"
+    },
+    {
+      "id": "icon_enemy_archer",
+      "path": "/assets/generated/ui/icon_enemy_archer.svg"
+    },
+    {
+      "id": "icon_enemy_assassin",
+      "path": "/assets/generated/ui/icon_enemy_assassin.svg"
+    },
+    {
+      "id": "icon_enemy_berserker",
+      "path": "/assets/generated/ui/icon_enemy_berserker.svg"
+    },
+    {
+      "id": "icon_enemy_controller",
+      "path": "/assets/generated/ui/icon_enemy_controller.svg"
+    },
+    {
+      "id": "icon_enemy_healer",
+      "path": "/assets/generated/ui/icon_enemy_healer.svg"
+    },
+    {
+      "id": "icon_enemy_mage",
+      "path": "/assets/generated/ui/icon_enemy_mage.svg"
+    },
+    {
+      "id": "icon_enemy_soldier",
+      "path": "/assets/generated/ui/icon_enemy_soldier.svg"
+    },
+    {
+      "id": "icon_enemy_summoner",
+      "path": "/assets/generated/ui/icon_enemy_summoner.svg"
+    },
+    {
+      "id": "icon_enemy_tank",
+      "path": "/assets/generated/ui/icon_enemy_tank.svg"
+    },
+    {
+      "id": "icon_export_config",
+      "path": "/assets/generated/ui/icon_export_config.svg"
+    },
+    {
+      "id": "icon_export_validation",
+      "path": "/assets/generated/ui/icon_export_validation.svg"
+    },
+    {
+      "id": "icon_formation_assassin_spread",
+      "path": "/assets/generated/ui/icon_formation_assassin_spread.svg"
+    },
+    {
+      "id": "icon_formation_backline_focus",
+      "path": "/assets/generated/ui/icon_formation_backline_focus.svg"
+    },
+    {
+      "id": "icon_formation_balanced_line",
+      "path": "/assets/generated/ui/icon_formation_balanced_line.svg"
+    },
+    {
+      "id": "icon_formation_cross",
+      "path": "/assets/generated/ui/icon_formation_cross.svg"
+    },
+    {
+      "id": "icon_formation_front_guard",
+      "path": "/assets/generated/ui/icon_formation_front_guard.svg"
+    },
+    {
+      "id": "icon_free_gem",
+      "path": "/assets/generated/ui/icon_free_gem.svg"
+    },
+    {
+      "id": "icon_gacha_box_1",
+      "path": "/assets/generated/ui/icon_gacha_box_1.svg"
+    },
+    {
+      "id": "icon_gacha_locked_box_2",
+      "path": "/assets/generated/ui/icon_gacha_locked_box_2.svg"
+    },
+    {
+      "id": "icon_gacha_locked_box_3",
+      "path": "/assets/generated/ui/icon_gacha_locked_box_3.svg"
+    },
+    {
+      "id": "icon_gacha_locked_paid",
+      "path": "/assets/generated/ui/icon_gacha_locked_paid.svg"
+    },
+    {
+      "id": "icon_gacha_odds",
+      "path": "/assets/generated/ui/icon_gacha_odds.svg"
+    },
+    {
+      "id": "icon_gacha_pity",
+      "path": "/assets/generated/ui/icon_gacha_pity.svg"
+    },
+    {
+      "id": "icon_gacha_shard_common",
+      "path": "/assets/generated/ui/icon_gacha_shard_common.svg"
+    },
+    {
+      "id": "icon_gacha_shard_rare",
+      "path": "/assets/generated/ui/icon_gacha_shard_rare.svg"
+    },
+    {
+      "id": "icon_gacha_shard_uncommon",
+      "path": "/assets/generated/ui/icon_gacha_shard_uncommon.svg"
+    },
+    {
+      "id": "icon_gacha_single_pull",
+      "path": "/assets/generated/ui/icon_gacha_single_pull.svg"
+    },
+    {
+      "id": "icon_gear_boots",
+      "path": "/assets/generated/ui/icon_gear_boots.svg"
+    },
+    {
+      "id": "icon_gear_bow_common",
+      "path": "/assets/generated/ui/icon_gear_bow_common.svg"
+    },
+    {
+      "id": "icon_gear_charm",
+      "path": "/assets/generated/ui/icon_gear_charm.svg"
+    },
+    {
+      "id": "icon_gear_dagger_common",
+      "path": "/assets/generated/ui/icon_gear_dagger_common.svg"
+    },
+    {
+      "id": "icon_gear_gloves",
+      "path": "/assets/generated/ui/icon_gear_gloves.svg"
+    },
+    {
+      "id": "icon_gear_heavy_armor",
+      "path": "/assets/generated/ui/icon_gear_heavy_armor.svg"
+    },
+    {
+      "id": "icon_gear_helmet",
+      "path": "/assets/generated/ui/icon_gear_helmet.svg"
+    },
+    {
+      "id": "icon_gear_light_armor",
+      "path": "/assets/generated/ui/icon_gear_light_armor.svg"
+    },
+    {
+      "id": "icon_gear_necklace",
+      "path": "/assets/generated/ui/icon_gear_necklace.svg"
+    },
+    {
+      "id": "icon_gear_ring",
+      "path": "/assets/generated/ui/icon_gear_ring.svg"
+    },
+    {
+      "id": "icon_gear_robe",
+      "path": "/assets/generated/ui/icon_gear_robe.svg"
+    },
+    {
+      "id": "icon_gear_staff_common",
+      "path": "/assets/generated/ui/icon_gear_staff_common.svg"
+    },
+    {
+      "id": "icon_gear_sword_common",
+      "path": "/assets/generated/ui/icon_gear_sword_common.svg"
+    },
+    {
+      "id": "icon_gold",
+      "path": "/assets/generated/ui/icon_gold.svg"
+    },
+    {
+      "id": "icon_guild",
+      "path": "/assets/generated/ui/icon_guild.svg"
+    },
+    {
+      "id": "icon_guild_banner",
+      "path": "/assets/generated/ui/icon_guild_banner.svg"
+    },
+    {
+      "id": "icon_guild_boss",
+      "path": "/assets/generated/ui/icon_guild_boss.svg"
+    },
+    {
+      "id": "icon_guild_entry",
+      "path": "/assets/generated/ui/icon_guild_entry.svg"
+    },
+    {
+      "id": "icon_guild_exp",
+      "path": "/assets/generated/ui/icon_guild_exp.svg"
+    },
+    {
+      "id": "icon_guild_leader",
+      "path": "/assets/generated/ui/icon_guild_leader.svg"
+    },
+    {
+      "id": "icon_guild_member",
+      "path": "/assets/generated/ui/icon_guild_member.svg"
+    },
+    {
+      "id": "icon_guild_officer",
+      "path": "/assets/generated/ui/icon_guild_officer.svg"
+    },
+    {
+      "id": "icon_guild_point",
+      "path": "/assets/generated/ui/icon_guild_point.svg"
+    },
+    {
+      "id": "icon_guild_reward",
+      "path": "/assets/generated/ui/icon_guild_reward.svg"
+    },
+    {
+      "id": "icon_guild_shop",
+      "path": "/assets/generated/ui/icon_guild_shop.svg"
+    },
+    {
+      "id": "icon_idle",
+      "path": "/assets/generated/ui/icon_idle.svg"
+    },
+    {
+      "id": "icon_idle_gold",
+      "path": "/assets/generated/ui/icon_idle_gold.svg"
+    },
+    {
+      "id": "icon_idle_hourglass",
+      "path": "/assets/generated/ui/icon_idle_hourglass.svg"
+    },
+    {
+      "id": "icon_idle_snapshot",
+      "path": "/assets/generated/ui/icon_idle_snapshot.svg"
+    },
+    {
+      "id": "icon_idle_xp",
+      "path": "/assets/generated/ui/icon_idle_xp.svg"
+    },
+    {
+      "id": "icon_inventory",
+      "path": "/assets/generated/ui/icon_inventory.svg"
+    },
+    {
+      "id": "icon_inventory_bag",
+      "path": "/assets/generated/ui/icon_inventory_bag.svg"
+    },
+    {
+      "id": "icon_inventory_expansion",
+      "path": "/assets/generated/ui/icon_inventory_expansion.svg"
+    },
+    {
+      "id": "icon_inventory_slot",
+      "path": "/assets/generated/ui/icon_inventory_slot.svg"
+    },
+    {
+      "id": "icon_item_equipped",
+      "path": "/assets/generated/ui/icon_item_equipped.svg"
+    },
+    {
+      "id": "icon_item_locked",
+      "path": "/assets/generated/ui/icon_item_locked.svg"
+    },
+    {
+      "id": "icon_launch_gate",
+      "path": "/assets/generated/ui/icon_launch_gate.svg"
+    },
+    {
+      "id": "icon_launch_no_go",
+      "path": "/assets/generated/ui/icon_launch_no_go.svg"
+    },
+    {
+      "id": "icon_mail_overflow",
+      "path": "/assets/generated/ui/icon_mail_overflow.svg"
+    },
+    {
+      "id": "icon_mailbox",
+      "path": "/assets/generated/ui/icon_mailbox.svg"
+    },
+    {
+      "id": "icon_main_required",
+      "path": "/assets/generated/ui/icon_main_required.svg"
+    },
+    {
+      "id": "icon_mat_antibreak_fragment",
+      "path": "/assets/generated/ui/icon_mat_antibreak_fragment.svg"
+    },
+    {
+      "id": "icon_mat_class_emblem_fragment",
+      "path": "/assets/generated/ui/icon_mat_class_emblem_fragment.svg"
+    },
+    {
+      "id": "icon_mat_enhancement_powder",
+      "path": "/assets/generated/ui/icon_mat_enhancement_powder.svg"
+    },
+    {
+      "id": "icon_mat_skill_book",
+      "path": "/assets/generated/ui/icon_mat_skill_book.svg"
+    },
+    {
+      "id": "icon_mat_skill_book_fragment",
+      "path": "/assets/generated/ui/icon_mat_skill_book_fragment.svg"
+    },
+    {
+      "id": "icon_mat_stone_lv1",
+      "path": "/assets/generated/ui/icon_mat_stone_lv1.svg"
+    },
+    {
+      "id": "icon_mat_stone_lv2",
+      "path": "/assets/generated/ui/icon_mat_stone_lv2.svg"
+    },
+    {
+      "id": "icon_mat_transfer_stone",
+      "path": "/assets/generated/ui/icon_mat_transfer_stone.svg"
+    },
+    {
+      "id": "icon_no_duplicate",
+      "path": "/assets/generated/ui/icon_no_duplicate.svg"
+    },
+    {
+      "id": "icon_paid_gem_locked",
+      "path": "/assets/generated/ui/icon_paid_gem_locked.svg"
+    },
+    {
+      "id": "icon_pause_admin_adjustments",
+      "path": "/assets/generated/ui/icon_pause_admin_adjustments.svg"
+    },
+    {
+      "id": "icon_pause_battles",
+      "path": "/assets/generated/ui/icon_pause_battles.svg"
+    },
+    {
+      "id": "icon_pause_gacha",
+      "path": "/assets/generated/ui/icon_pause_gacha.svg"
+    },
+    {
+      "id": "icon_pause_rewards",
+      "path": "/assets/generated/ui/icon_pause_rewards.svg"
+    },
+    {
+      "id": "icon_pause_withdrawals",
+      "path": "/assets/generated/ui/icon_pause_withdrawals.svg"
+    },
+    {
+      "id": "icon_policy_placeholder",
+      "path": "/assets/generated/ui/icon_policy_placeholder.svg"
+    },
+    {
+      "id": "icon_policy_unreviewed",
+      "path": "/assets/generated/ui/icon_policy_unreviewed.svg"
+    },
+    {
+      "id": "icon_privacy",
+      "path": "/assets/generated/ui/icon_privacy.svg"
+    },
+    {
+      "id": "icon_region_restricted",
+      "path": "/assets/generated/ui/icon_region_restricted.svg"
+    },
+    {
+      "id": "icon_region_review_required",
+      "path": "/assets/generated/ui/icon_region_review_required.svg"
+    },
+    {
+      "id": "icon_reset_ticket",
+      "path": "/assets/generated/ui/icon_reset_ticket.svg"
+    },
+    {
+      "id": "icon_reward_chest",
+      "path": "/assets/generated/ui/icon_reward_chest.svg"
+    },
+    {
+      "id": "icon_reward_free_gem",
+      "path": "/assets/generated/ui/icon_reward_free_gem.svg"
+    },
+    {
+      "id": "icon_reward_gold",
+      "path": "/assets/generated/ui/icon_reward_gold.svg"
+    },
+    {
+      "id": "icon_reward_powder",
+      "path": "/assets/generated/ui/icon_reward_powder.svg"
+    },
+    {
+      "id": "icon_reward_skill_book",
+      "path": "/assets/generated/ui/icon_reward_skill_book.svg"
+    },
+    {
+      "id": "icon_reward_stone",
+      "path": "/assets/generated/ui/icon_reward_stone.svg"
+    },
+    {
+      "id": "icon_reward_xp",
+      "path": "/assets/generated/ui/icon_reward_xp.svg"
+    },
+    {
+      "id": "icon_risk_critical",
+      "path": "/assets/generated/ui/icon_risk_critical.svg"
+    },
+    {
+      "id": "icon_risk_gacha_abuse",
+      "path": "/assets/generated/ui/icon_risk_gacha_abuse.svg"
+    },
+    {
+      "id": "icon_risk_high",
+      "path": "/assets/generated/ui/icon_risk_high.svg"
+    },
+    {
+      "id": "icon_risk_impossible_damage",
+      "path": "/assets/generated/ui/icon_risk_impossible_damage.svg"
+    },
+    {
+      "id": "icon_risk_low",
+      "path": "/assets/generated/ui/icon_risk_low.svg"
+    },
+    {
+      "id": "icon_risk_medium",
+      "path": "/assets/generated/ui/icon_risk_medium.svg"
+    },
+    {
+      "id": "icon_risk_multi_account",
+      "path": "/assets/generated/ui/icon_risk_multi_account.svg"
+    },
+    {
+      "id": "icon_risk_notice",
+      "path": "/assets/generated/ui/icon_risk_notice.svg"
+    },
+    {
+      "id": "icon_risk_withdrawal",
+      "path": "/assets/generated/ui/icon_risk_withdrawal.svg"
+    },
+    {
+      "id": "icon_rollback_plan",
+      "path": "/assets/generated/ui/icon_rollback_plan.svg"
+    },
+    {
+      "id": "icon_salvage",
+      "path": "/assets/generated/ui/icon_salvage.svg"
+    },
+    {
+      "id": "icon_security_audit_pending",
+      "path": "/assets/generated/ui/icon_security_audit_pending.svg"
+    },
+    {
+      "id": "icon_seed_snapshot",
+      "path": "/assets/generated/ui/icon_seed_snapshot.svg"
+    },
+    {
+      "id": "icon_shop_gem",
+      "path": "/assets/generated/ui/icon_shop_gem.svg"
+    },
+    {
+      "id": "icon_shop_gold",
+      "path": "/assets/generated/ui/icon_shop_gold.svg"
+    },
+    {
+      "id": "icon_shop_guild",
+      "path": "/assets/generated/ui/icon_shop_guild.svg"
+    },
+    {
+      "id": "icon_shop_locked",
+      "path": "/assets/generated/ui/icon_shop_locked.svg"
+    },
+    {
+      "id": "icon_shop_reset_time",
+      "path": "/assets/generated/ui/icon_shop_reset_time.svg"
+    },
+    {
+      "id": "icon_shop_stock",
+      "path": "/assets/generated/ui/icon_shop_stock.svg"
+    },
+    {
+      "id": "icon_simulation_not_run",
+      "path": "/assets/generated/ui/icon_simulation_not_run.svg"
+    },
+    {
+      "id": "icon_skill_archer_arrow_rain",
+      "path": "/assets/generated/ui/icon_skill_archer_arrow_rain.svg"
+    },
+    {
+      "id": "icon_skill_archer_eagle_eye",
+      "path": "/assets/generated/ui/icon_skill_archer_eagle_eye.svg"
+    },
+    {
+      "id": "icon_skill_archer_precise_shot",
+      "path": "/assets/generated/ui/icon_skill_archer_precise_shot.svg"
+    },
+    {
+      "id": "icon_skill_mage_arcane_burst",
+      "path": "/assets/generated/ui/icon_skill_mage_arcane_burst.svg"
+    },
+    {
+      "id": "icon_skill_mage_fire_bolt",
+      "path": "/assets/generated/ui/icon_skill_mage_fire_bolt.svg"
+    },
+    {
+      "id": "icon_skill_mage_frost_wave",
+      "path": "/assets/generated/ui/icon_skill_mage_frost_wave.svg"
+    },
+    {
+      "id": "icon_skill_priest_holy_shield",
+      "path": "/assets/generated/ui/icon_skill_priest_holy_shield.svg"
+    },
+    {
+      "id": "icon_skill_priest_light_smite",
+      "path": "/assets/generated/ui/icon_skill_priest_light_smite.svg"
+    },
+    {
+      "id": "icon_skill_priest_minor_heal",
+      "path": "/assets/generated/ui/icon_skill_priest_minor_heal.svg"
+    },
+    {
+      "id": "icon_skill_swordsman_brave_guard",
+      "path": "/assets/generated/ui/icon_skill_swordsman_brave_guard.svg"
+    },
+    {
+      "id": "icon_skill_swordsman_guard_break",
+      "path": "/assets/generated/ui/icon_skill_swordsman_guard_break.svg"
+    },
+    {
+      "id": "icon_skill_swordsman_slash",
+      "path": "/assets/generated/ui/icon_skill_swordsman_slash.svg"
+    },
+    {
+      "id": "icon_skill_thief_backstab",
+      "path": "/assets/generated/ui/icon_skill_thief_backstab.svg"
+    },
+    {
+      "id": "icon_skill_thief_quick_stab",
+      "path": "/assets/generated/ui/icon_skill_thief_quick_stab.svg"
+    },
+    {
+      "id": "icon_skill_thief_smoke_step",
+      "path": "/assets/generated/ui/icon_skill_thief_smoke_step.svg"
+    },
+    {
+      "id": "icon_snapshot_lock",
+      "path": "/assets/generated/ui/icon_snapshot_lock.svg"
+    },
+    {
+      "id": "icon_stage",
+      "path": "/assets/generated/ui/icon_stage.svg"
+    },
+    {
+      "id": "icon_stage_completed",
+      "path": "/assets/generated/ui/icon_stage_completed.svg"
+    },
+    {
+      "id": "icon_stage_elite",
+      "path": "/assets/generated/ui/icon_stage_elite.svg"
+    },
+    {
+      "id": "icon_stage_locked",
+      "path": "/assets/generated/ui/icon_stage_locked.svg"
+    },
+    {
+      "id": "icon_stage_main_boss",
+      "path": "/assets/generated/ui/icon_stage_main_boss.svg"
+    },
+    {
+      "id": "icon_stage_mini_boss",
+      "path": "/assets/generated/ui/icon_stage_mini_boss.svg"
+    },
+    {
+      "id": "icon_stage_normal",
+      "path": "/assets/generated/ui/icon_stage_normal.svg"
+    },
+    {
+      "id": "icon_stage_three_star",
+      "path": "/assets/generated/ui/icon_stage_three_star.svg"
+    },
+    {
+      "id": "icon_stage_tutorial_override",
+      "path": "/assets/generated/ui/icon_stage_tutorial_override.svg"
+    },
+    {
+      "id": "icon_star_chest",
+      "path": "/assets/generated/ui/icon_star_chest.svg"
+    },
+    {
+      "id": "icon_star_empty",
+      "path": "/assets/generated/ui/icon_star_empty.svg"
+    },
+    {
+      "id": "icon_star_full",
+      "path": "/assets/generated/ui/icon_star_full.svg"
+    },
+    {
+      "id": "icon_status_bleed",
+      "path": "/assets/generated/ui/icon_status_bleed.svg"
+    },
+    {
+      "id": "icon_status_buff_crit",
+      "path": "/assets/generated/ui/icon_status_buff_crit.svg"
+    },
+    {
+      "id": "icon_status_buff_eva",
+      "path": "/assets/generated/ui/icon_status_buff_eva.svg"
+    },
+    {
+      "id": "icon_status_burn",
+      "path": "/assets/generated/ui/icon_status_burn.svg"
+    },
+    {
+      "id": "icon_status_def_down",
+      "path": "/assets/generated/ui/icon_status_def_down.svg"
+    },
+    {
+      "id": "icon_status_freeze",
+      "path": "/assets/generated/ui/icon_status_freeze.svg"
+    },
+    {
+      "id": "icon_status_shield",
+      "path": "/assets/generated/ui/icon_status_shield.svg"
+    },
+    {
+      "id": "icon_terms",
+      "path": "/assets/generated/ui/icon_terms.svg"
+    },
+    {
+      "id": "icon_transfer_stone",
+      "path": "/assets/generated/ui/icon_transfer_stone.svg"
+    },
+    {
+      "id": "icon_turn_counter",
+      "path": "/assets/generated/ui/icon_turn_counter.svg"
+    },
+    {
+      "id": "icon_victory_crown",
+      "path": "/assets/generated/ui/icon_victory_crown.svg"
+    },
+    {
+      "id": "icon_weapon_bow_t1_common",
+      "path": "/assets/generated/ui/icon_weapon_bow_t1_common.svg"
+    },
+    {
+      "id": "icon_weapon_dagger_t1_common",
+      "path": "/assets/generated/ui/icon_weapon_dagger_t1_common.svg"
+    },
+    {
+      "id": "icon_weapon_staff_t1_common",
+      "path": "/assets/generated/ui/icon_weapon_staff_t1_common.svg"
+    },
+    {
+      "id": "icon_weapon_sword_t1_common",
+      "path": "/assets/generated/ui/icon_weapon_sword_t1_common.svg"
+    },
+    {
+      "id": "icon_wld_locked",
+      "path": "/assets/generated/ui/icon_wld_locked.svg"
+    },
+    {
+      "id": "portrait_class_archer",
+      "path": "/assets/generated/ui/portrait_class_archer.svg"
+    },
+    {
+      "id": "portrait_class_mage",
+      "path": "/assets/generated/ui/portrait_class_mage.svg"
+    },
+    {
+      "id": "portrait_class_priest",
+      "path": "/assets/generated/ui/portrait_class_priest.svg"
+    },
+    {
+      "id": "portrait_class_swordsman",
+      "path": "/assets/generated/ui/portrait_class_swordsman.svg"
+    },
+    {
+      "id": "portrait_class_thief",
+      "path": "/assets/generated/ui/portrait_class_thief.svg"
+    },
+    {
+      "id": "portrait_guild_boss_v1a",
+      "path": "/assets/generated/ui/portrait_guild_boss_v1a.svg"
+    },
+    {
+      "id": "portrait_main_swordsman_hero",
+      "path": "/assets/generated/ui/portrait_main_swordsman_hero.svg"
+    },
+    {
+      "id": "portrait_starter_priest_light",
+      "path": "/assets/generated/ui/portrait_starter_priest_light.svg"
+    },
+    {
+      "id": "starter_teammate_priest_light",
+      "path": "/assets/generated/ui/starter_teammate_priest_light.svg"
+    },
+    {
+      "id": "ui_chapter_tab_active",
+      "path": "/assets/generated/ui/ui_chapter_tab_active.svg"
+    },
+    {
+      "id": "ui_chapter_tab_locked",
+      "path": "/assets/generated/ui/ui_chapter_tab_locked.svg"
+    },
+    {
+      "id": "ui_grid_cell_back",
+      "path": "/assets/generated/ui/ui_grid_cell_back.svg"
+    },
+    {
+      "id": "ui_grid_cell_empty",
+      "path": "/assets/generated/ui/ui_grid_cell_empty.svg"
+    },
+    {
+      "id": "ui_grid_cell_front",
+      "path": "/assets/generated/ui/ui_grid_cell_front.svg"
+    },
+    {
+      "id": "ui_grid_cell_main_character",
+      "path": "/assets/generated/ui/ui_grid_cell_main_character.svg"
+    },
+    {
+      "id": "ui_grid_cell_middle",
+      "path": "/assets/generated/ui/ui_grid_cell_middle.svg"
+    },
+    {
+      "id": "ui_grid_cell_support_character",
+      "path": "/assets/generated/ui/ui_grid_cell_support_character.svg"
+    },
+    {
+      "id": "ui_stage_boss_frame",
+      "path": "/assets/generated/ui/ui_stage_boss_frame.svg"
+    },
+    {
+      "id": "ui_stage_checkpoint_frame",
+      "path": "/assets/generated/ui/ui_stage_checkpoint_frame.svg"
+    },
+    {
+      "id": "ui_stage_path_line",
+      "path": "/assets/generated/ui/ui_stage_path_line.svg"
+    },
+    {
+      "id": "vfx_arcane_burst",
+      "path": "/assets/generated/ui/vfx_arcane_burst.svg"
+    },
+    {
+      "id": "vfx_arrow_rain",
+      "path": "/assets/generated/ui/vfx_arrow_rain.svg"
+    },
+    {
+      "id": "vfx_backstab_shadow",
+      "path": "/assets/generated/ui/vfx_backstab_shadow.svg"
+    },
+    {
+      "id": "vfx_crit_slash",
+      "path": "/assets/generated/ui/vfx_crit_slash.svg"
+    },
+    {
+      "id": "vfx_fire_bolt",
+      "path": "/assets/generated/ui/vfx_fire_bolt.svg"
+    },
+    {
+      "id": "vfx_frost_wave",
+      "path": "/assets/generated/ui/vfx_frost_wave.svg"
+    },
+    {
+      "id": "vfx_guard_break",
+      "path": "/assets/generated/ui/vfx_guard_break.svg"
+    },
+    {
+      "id": "vfx_holy_shield",
+      "path": "/assets/generated/ui/vfx_holy_shield.svg"
+    },
+    {
+      "id": "vfx_light_heal",
+      "path": "/assets/generated/ui/vfx_light_heal.svg"
+    },
+    {
+      "id": "vfx_magic_hit",
+      "path": "/assets/generated/ui/vfx_magic_hit.svg"
+    },
+    {
+      "id": "vfx_physical_slash",
+      "path": "/assets/generated/ui/vfx_physical_slash.svg"
+    },
+    {
+      "id": "vfx_result_blue_victory",
+      "path": "/assets/generated/ui/vfx_result_blue_victory.svg"
+    },
+    {
+      "id": "vfx_result_dark_defeat",
+      "path": "/assets/generated/ui/vfx_result_dark_defeat.svg"
+    },
+    {
+      "id": "vfx_result_gold_burst",
+      "path": "/assets/generated/ui/vfx_result_gold_burst.svg"
+    },
+    {
+      "id": "vfx_shield_absorb",
+      "path": "/assets/generated/ui/vfx_shield_absorb.svg"
+    },
+    {
+      "id": "vfx_shield_gold",
+      "path": "/assets/generated/ui/vfx_shield_gold.svg"
+    }
+  ]
+}

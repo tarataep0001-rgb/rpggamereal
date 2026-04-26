@@ -1,0 +1,55 @@
+export const launchGateChecklist = [
+  "no critical/high unresolved bugs",
+  "WLD-sensitive flags correct",
+  "mock production hard-error verified",
+  "ledger reconciliation pass",
+  "reward pool balance pass",
+  "backup restore tested",
+  "admin MFA/role checks pass",
+  "emergency pause tested",
+  "gacha odds/version test pass",
+  "battle deterministic replay test pass",
+  "withdrawal disabled/enabled according to launch flag and test status",
+  "monitoring alerts active",
+  "region policy explicit",
+  "Terms/Risk notices active",
+  "rollback plan ready",
+].map((label) => ({
+  id: label.toLowerCase().replaceAll(" ", "_").replaceAll("/", "_"),
+  label,
+  status: "NO-GO",
+  reason: "not passed in prototype phase",
+}));
+
+export const noGoReasons = [
+  "implementation not complete",
+  "simulations not run",
+  "legal/policy review not completed",
+  "security audit not completed",
+  "production launch gates not passed",
+] as const;
+
+export const simulationReadinessReports = [
+  "Battle Simulator",
+  "Boss Simulator",
+  "XP Progression",
+  "Idle Progression",
+  "Drop Rate",
+  "Gacha/Pity",
+  "Economy/Gold Sink",
+  "Replay Cap Abuse",
+].map((name) => ({
+  id: name.toLowerCase().replaceAll(" ", "_").replaceAll("/", "_"),
+  name,
+  status: "Not run",
+  config_version: "mock-config-v1a",
+  simulator_version: "not-run",
+  random_seed_range: "not sampled",
+  scenario: "required before launch",
+  target: "TBD after simulator implementation",
+  observed_result: "No pass claimed",
+  adjustment_decision: "pending",
+  reviewer: "unassigned",
+  timestamp: "not generated",
+  unresolved_risk_notes: "simulation has not been executed",
+}));

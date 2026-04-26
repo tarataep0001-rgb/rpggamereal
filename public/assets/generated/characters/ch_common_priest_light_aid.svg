@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="title-ch-common-priest-light-aid desc-ch-common-priest-light-aid">
+  <title id="title-ch-common-priest-light-aid">Light Aid</title>
+  <desc id="desc-ch-common-priest-light-aid">Original local SVG placeholder for character asset ch_common_priest_light_aid. No external or copyrighted asset.</desc>
+  <defs>
+    <radialGradient id="bg-ch-common-priest-light-aid" cx="35%" cy="22%" r="80%">
+      <stop offset="0" stop-color="#fef3c7" stop-opacity="0.95"/>
+      <stop offset="0.42" stop-color="#94a3b8" stop-opacity="0.86"/>
+      <stop offset="1" stop-color="#020617"/>
+    </radialGradient>
+    <linearGradient id="frame-ch-common-priest-light-aid" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#cbd5e1"/>
+      <stop offset="0.52" stop-color="#94a3b8"/>
+      <stop offset="1" stop-color="#334155"/>
+    </linearGradient>
+    <filter id="shadow-ch-common-priest-light-aid" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  <rect width="256" height="256" rx="32" fill="url(#bg-ch-common-priest-light-aid)"/>
+  <rect x="14" y="14" width="228" height="228" rx="26" fill="none" stroke="url(#frame-ch-common-priest-light-aid)" stroke-width="8"/>
+  <circle cx="200" cy="54" r="22" fill="#cbd5e1" opacity="0.22"/>
+  <circle cx="48" cy="198" r="34" fill="#fef3c7" opacity="0.12"/>
+  <g filter="url(#shadow-ch-common-priest-light-aid)">
+    <path d="M106 52 L106 170 M78 78 L134 78 M88 112 C94 96 118 96 124 112 C132 136 80 136 88 112 Z" fill="#f8fafc" opacity="0.94"/>
+    <path d="M106 52 L106 170 M78 78 L134 78 M88 112 C94 96 118 96 124 112 C132 136 80 136 88 112 Z" fill="none" stroke="#cbd5e1" stroke-width="4" opacity="0.55"/>
+  </g>
+  <rect x="38" y="202" width="180" height="24" rx="12" fill="#020617" opacity="0.45"/>
+  <text x="128" y="219" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#e5e7eb">Priest / Common</text>
+</svg>
