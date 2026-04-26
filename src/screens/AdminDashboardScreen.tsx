@@ -5,6 +5,7 @@ import { ClassSkillFormationExportPanel } from "@/components/admin/ClassSkillFor
 import { ConfigExportSummaryPanel } from "@/components/admin/ConfigExportSummaryPanel";
 import { EmergencyPausePanel } from "@/components/admin/EmergencyPausePanel";
 import { EquipmentItemDropExportPanel } from "@/components/admin/EquipmentItemDropExportPanel";
+import { EnemyBossStageExportPanel } from "@/components/admin/EnemyBossStageExportPanel";
 import { PolicyStatusPanel } from "@/components/admin/PolicyStatusPanel";
 import { RegionPolicyPanel } from "@/components/admin/RegionPolicyPanel";
 import { RiskFlagPanel } from "@/components/admin/RiskFlagPanel";
@@ -52,6 +53,7 @@ export function AdminDashboardScreen() {
       <ConfigExportSummaryPanel />
       <ClassSkillFormationExportPanel />
       <EquipmentItemDropExportPanel />
+      <EnemyBossStageExportPanel />
       <EmergencyPausePanel />
       <RiskFlagPanel />
       <RegionPolicyPanel />

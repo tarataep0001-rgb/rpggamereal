@@ -743,11 +743,20 @@ export const mockAssets: MockAssetReference[] = [
     "icon_enemy_berserker",
     "icon_boss_mini",
     "icon_boss_main",
+    "portrait_boss_ch1_main",
+    "portrait_boss_ch2_mini",
+    "portrait_boss_ch2_main",
+    "portrait_boss_ch3_mini",
+    "portrait_boss_ch3_main",
+    "portrait_boss_ch4_mini",
+    "portrait_boss_ch4_main",
+    "portrait_boss_ch5_mini",
+    "portrait_boss_ch5_main",
   ].map((assetId) =>
     asset({
       asset_id: assetId,
       display_name: assetId.replaceAll("_", " "),
-      category: "enemy_icon",
+      category: assetId.startsWith("portrait_boss") ? "guild_boss" : "enemy_icon",
       intended_use: "Future enemy and boss composition preview icon placeholder",
       placeholder_type: "emoji",
       suggested_prompt: `${artDirection} Stylized fantasy mobile RPG enemy icon for ${assetId.replaceAll("_", " ")}, clean silhouette, teen-safe fantasy, no text.`,
@@ -840,6 +849,11 @@ export const mockAssets: MockAssetReference[] = [
     "vfx_shield_absorb",
     "vfx_crit_slash",
     "vfx_magic_hit",
+    "vfx_boss_basic_attack",
+    "vfx_boss_signature",
+    "vfx_boss_phase",
+    "vfx_boss_rage",
+    "vfx_boss_summon",
   ].map((assetId) =>
     asset({
       asset_id: assetId,

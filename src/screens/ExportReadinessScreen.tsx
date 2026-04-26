@@ -4,6 +4,8 @@ import { ConfigExportSummaryPanel } from "@/components/admin/ConfigExportSummary
 import { ConfigValidationResultPanel } from "@/components/admin/ConfigValidationResultPanel";
 import { EquipmentItemDropExportPanel } from "@/components/admin/EquipmentItemDropExportPanel";
 import { EquipmentItemDropValidationPanel } from "@/components/admin/EquipmentItemDropValidationPanel";
+import { EnemyBossStageExportPanel } from "@/components/admin/EnemyBossStageExportPanel";
+import { EnemyBossStageValidationPanel } from "@/components/admin/EnemyBossStageValidationPanel";
 import { ExportOrderPanel } from "@/components/admin/ExportOrderPanel";
 import { V1AAcceptanceChecklist } from "@/components/admin/V1AAcceptanceChecklist";
 import { ValidationChecklistPanel } from "@/components/admin/ValidationChecklistPanel";
@@ -27,6 +29,8 @@ export function ExportReadinessScreen() {
       <ClassSkillFormationValidationPanel />
       <EquipmentItemDropExportPanel />
       <EquipmentItemDropValidationPanel />
+      <EnemyBossStageExportPanel />
+      <EnemyBossStageValidationPanel />
       <ExportOrderPanel />
       <ValidationChecklistPanel />
       <V1AAcceptanceChecklist />

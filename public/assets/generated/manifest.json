@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-26T08:23:18.707Z",
+  "generated_at": "2026-04-26T08:44:09.325Z",
   "generator": "scripts/generate-local-assets.mjs",
   "safety_note": "Original local SVG placeholders only. No external, copyrighted, paid, WLD, payment, or production-money asset behavior.",
   "characters": [
@@ -1700,6 +1700,46 @@
       "path": "/assets/generated/ui/icon_wld_locked.svg"
     },
     {
+      "id": "portrait_boss",
+      "path": "/assets/generated/ui/portrait_boss.svg"
+    },
+    {
+      "id": "portrait_boss_ch1_main",
+      "path": "/assets/generated/ui/portrait_boss_ch1_main.svg"
+    },
+    {
+      "id": "portrait_boss_ch2_main",
+      "path": "/assets/generated/ui/portrait_boss_ch2_main.svg"
+    },
+    {
+      "id": "portrait_boss_ch2_mini",
+      "path": "/assets/generated/ui/portrait_boss_ch2_mini.svg"
+    },
+    {
+      "id": "portrait_boss_ch3_main",
+      "path": "/assets/generated/ui/portrait_boss_ch3_main.svg"
+    },
+    {
+      "id": "portrait_boss_ch3_mini",
+      "path": "/assets/generated/ui/portrait_boss_ch3_mini.svg"
+    },
+    {
+      "id": "portrait_boss_ch4_main",
+      "path": "/assets/generated/ui/portrait_boss_ch4_main.svg"
+    },
+    {
+      "id": "portrait_boss_ch4_mini",
+      "path": "/assets/generated/ui/portrait_boss_ch4_mini.svg"
+    },
+    {
+      "id": "portrait_boss_ch5_main",
+      "path": "/assets/generated/ui/portrait_boss_ch5_main.svg"
+    },
+    {
+      "id": "portrait_boss_ch5_mini",
+      "path": "/assets/generated/ui/portrait_boss_ch5_mini.svg"
+    },
+    {
       "id": "portrait_class_archer",
       "path": "/assets/generated/ui/portrait_class_archer.svg"
     },
@@ -1790,6 +1830,26 @@
     {
       "id": "vfx_backstab_shadow",
       "path": "/assets/generated/ui/vfx_backstab_shadow.svg"
+    },
+    {
+      "id": "vfx_boss_basic_attack",
+      "path": "/assets/generated/ui/vfx_boss_basic_attack.svg"
+    },
+    {
+      "id": "vfx_boss_phase",
+      "path": "/assets/generated/ui/vfx_boss_phase.svg"
+    },
+    {
+      "id": "vfx_boss_rage",
+      "path": "/assets/generated/ui/vfx_boss_rage.svg"
+    },
+    {
+      "id": "vfx_boss_signature",
+      "path": "/assets/generated/ui/vfx_boss_signature.svg"
+    },
+    {
+      "id": "vfx_boss_summon",
+      "path": "/assets/generated/ui/vfx_boss_summon.svg"
     },
     {
       "id": "vfx_crit_slash",

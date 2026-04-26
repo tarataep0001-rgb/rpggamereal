@@ -1,11 +1,17 @@
 import { configExportObjects, exportManifest } from "@/config/exportManifest";
+import { bossConfig, bossRows } from "@/config/bossConfig";
+import { bossSkillRows } from "@/config/bossSkillConfig";
 import { dropConfig } from "@/config/dropConfig";
 import { equipmentConfig } from "@/config/equipmentConfig";
+import { enemyCompositionRows } from "@/config/enemyCompositionConfig";
+import { enemyRows } from "@/config/enemyConfig";
+import { enemySkillRows } from "@/config/enemySkillConfig";
 import { featureFlagsConfig } from "@/config/featureFlagsConfig";
 import { classConfig } from "@/config/classConfig";
 import { formationConfig } from "@/config/formationConfig";
 import { itemMaterialConfig } from "@/config/itemMaterialConfig";
 import { skillConfig } from "@/config/skillConfig";
+import { stageRows, tutorialOverrideRows } from "@/config/stageConfig";
 import { gachaBoxes } from "@/data/mockGacha";
 import type { ValidationStatus } from "@/types/game";
 
@@ -262,6 +268,158 @@ export function validateDropConfigV1A(): boolean {
   );
 }
 
+export function validateEnemyConfigV1A(): boolean {
+  const requiredEnemyIds = [
+    "enemy_ch1_soldier_fire",
+    "enemy_ch1_archer_wind",
+    "enemy_ch1_mage_fire",
+    "enemy_ch1_tank_earth",
+    "enemy_ch2_soldier_water",
+    "enemy_ch2_archer_fire",
+    "enemy_ch2_healer_water",
+    "enemy_ch2_berserker_fire",
+    "enemy_ch3_tank_earth",
+    "enemy_ch3_assassin_wind",
+    "enemy_ch3_controller_earth",
+    "enemy_ch3_archer_wind",
+    "enemy_ch4_mage_water",
+    "enemy_ch4_soldier_earth",
+    "enemy_ch4_healer_water",
+    "enemy_ch4_summoner_earth",
+    "enemy_ch5_light_soldier",
+    "enemy_ch5_dark_assassin",
+    "enemy_ch5_light_healer",
+    "enemy_ch5_dark_controller",
+  ];
+  const enemyIds = enemyRows.map((row) => row.enemy_id);
+  const skillIds = new Set(enemySkillRows.map((row) => row.enemy_skill_id));
+
+  return (
+    new Set(enemyIds).size === enemyIds.length &&
+    requiredEnemyIds.every((id) => enemyIds.includes(id)) &&
+    enemyRows.every((row) => row.skill_list.length > 0) &&
+    enemyRows.every((row) => row.skill_list.every((skillId) => skillIds.has(skillId))) &&
+    enemyRows.every((row) => Boolean(row.asset_id))
+  );
+}
+
+export function validateEnemySkillConfigV1A(): boolean {
+  const requiredSkillIds = [
+    "enemy_basic_attack",
+    "enemy_guard",
+    "enemy_arrow_shot",
+    "enemy_firebolt",
+    "enemy_heal_minor",
+    "enemy_slow_hex",
+    "enemy_summon_pebble",
+    "enemy_berserk_hit",
+  ];
+  const skillIds = enemySkillRows.map((row) => row.enemy_skill_id);
+
+  return (
+    new Set(skillIds).size === skillIds.length &&
+    requiredSkillIds.every((id) => skillIds.includes(id)) &&
+    enemySkillRows.every(
+      (row) =>
+        Boolean(row.enemy_skill_id) &&
+        Boolean(row.display_name_th) &&
+        Boolean(row.skill_type) &&
+        row.cooldown >= 0 &&
+        Boolean(row.target_type) &&
+        row.status_chance >= 0 &&
+        row.duration >= 0 &&
+        Boolean(row.trigger_condition) &&
+        Boolean(row.asset_id) &&
+        Boolean(row.config_version),
+    )
+  );
+}
+
+export function validateBossConfigV1A(): boolean {
+  return (
+    bossRows.length === 15 &&
+    bossRows.filter((row) => row.boss_type === "mini-boss").length === 10 &&
+    bossRows.filter((row) => row.boss_type === "main-boss").length === 5 &&
+    bossRows.every((row) => Boolean(row.stage_id)) &&
+    bossRows.every((row) => Boolean(row.drop_table_id)) &&
+    bossRows.every((row) => Boolean(row.asset_id)) &&
+    bossConfig.bossCount === 15
+  );
+}
+
+export function validateBossSkillConfigV1A(): boolean {
+  const bossIds = new Set(bossRows.map((row) => row.boss_id));
+  const skillBossIds = bossSkillRows.map((row) => row.boss_id);
+
+  return (
+    [...bossIds].every((bossId) => {
+      const count = skillBossIds.filter((id) => id === bossId).length;
+      return count >= 2 && count <= 4;
+    }) &&
+    bossSkillRows.every((row) => bossIds.has(row.boss_id)) &&
+    bossSkillRows.every(
+      (row) =>
+        Boolean(row.boss_skill_id) &&
+        Boolean(row.boss_id) &&
+        Boolean(row.trigger_condition) &&
+        row.cooldown >= 0 &&
+        Boolean(row.target_type) &&
+        row.damage_coef > 0 &&
+        row.status_chance >= 0 &&
+        row.duration >= 0 &&
+        Boolean(row.phase_required) &&
+        Boolean(row.description_th) &&
+        Boolean(row.asset_id) &&
+        Boolean(row.config_version),
+    )
+  );
+}
+
+export function validateStageConfigV1A(): boolean {
+  const stageIds = stageRows.map((row) => row.stage_id);
+  const globalIndexes = stageRows.map((row) => row.global_stage_index);
+  const requiredTutorialStages = ["1-1", "1-2", "1-3", "1-5", "1-10"];
+  const tutorialIds: string[] = tutorialOverrideRows.map((row) => row.stage_id);
+  const chapterCounts = ([1, 2, 3, 4, 5] as const).map((chapter) => ({
+    chapter,
+    count: stageRows.filter((row) => row.chapter === chapter).length,
+  }));
+
+  return (
+    stageRows.length === 150 &&
+    chapterCounts.every(({ chapter, count }) => count === chapter * 10) &&
+    new Set(stageIds).size === stageIds.length &&
+    new Set(globalIndexes).size === globalIndexes.length &&
+    stageRows.every((row) => Boolean(row.enemy_composition_id)) &&
+    stageRows.every((row) => Boolean(row.drop_table_id)) &&
+    requiredTutorialStages.every((id) => tutorialIds.includes(id)) &&
+    requiredTutorialStages.every((id) => Boolean(stageRows.find((row) => row.stage_id === id)?.tutorial_override))
+  );
+}
+
+export function validateEnemyCompositionConfigV1A(): boolean {
+  const stageById = new Map(stageRows.map((stage) => [stage.stage_id, stage]));
+  const enemyIds = new Set(enemyRows.map((row) => row.enemy_id));
+  const bossIds = new Set(bossRows.map((row) => row.boss_id));
+
+  return (
+    enemyCompositionRows.length === 150 &&
+    enemyCompositionRows.every((row) => stageById.has(row.stage_id)) &&
+    enemyCompositionRows.every((row) => row.enemies.every((enemy) => enemyIds.has(enemy.enemy_id))) &&
+    enemyCompositionRows.every((row) => {
+      const stage = stageById.get(row.stage_id);
+      return Boolean(stage) && stage?.stage_type === row.stage_type;
+    }) &&
+    enemyCompositionRows.every((row) => {
+      const stage = stageById.get(row.stage_id);
+      if (stage?.stage_type === "mini-boss" || stage?.stage_type === "main-boss") {
+        return Boolean(row.boss_id && bossIds.has(row.boss_id));
+      }
+      return row.boss_id === undefined;
+    })
+  );
+}
+
 export const configValidationResults: ConfigValidationResult[] = [
   {
     id: "manifest-unique-export-ids",
@@ -336,6 +494,42 @@ export const configValidationResults: ConfigValidationResult[] = [
     label: "drop_config V1A rows valid",
     status: validateDropConfigV1A() ? "pass" : "fail",
     detail: "Gear roll rates, 100% distributions, 30 drop table IDs, weekly boss rules.",
+  },
+  {
+    id: "enemy-config-v1a",
+    label: "enemies_config V1A rows valid",
+    status: validateEnemyConfigV1A() ? "pass" : "fail",
+    detail: "20 required enemy master rows, skill references, and asset IDs.",
+  },
+  {
+    id: "enemy-skills-config-v1a",
+    label: "enemy_skills_config V1A rows valid",
+    status: validateEnemySkillConfigV1A() ? "pass" : "fail",
+    detail: "8 enemy skill templates with required display fields.",
+  },
+  {
+    id: "boss-config-v1a",
+    label: "boss_config V1A rows valid",
+    status: validateBossConfigV1A() ? "pass" : "fail",
+    detail: "15 bosses, 10 mini-bosses, 5 main bosses, stage/drop/asset references.",
+  },
+  {
+    id: "boss-skills-config-v1a",
+    label: "boss_skills_config V1A rows valid",
+    status: validateBossSkillConfigV1A() ? "pass" : "fail",
+    detail: "Every boss has 2-4 concrete skill rows and valid boss references.",
+  },
+  {
+    id: "stage-config-v1a",
+    label: "stages_config V1A rows valid",
+    status: validateStageConfigV1A() ? "pass" : "fail",
+    detail: "150 stages, chapter counts 10/20/30/40/50, tutorial overrides present.",
+  },
+  {
+    id: "enemy-composition-config-v1a",
+    label: "enemy_compositions_config V1A rows valid",
+    status: validateEnemyCompositionConfigV1A() ? "pass" : "fail",
+    detail: "150 compositions, stage references, enemy references, boss references.",
   },
   {
     id: "gacha-rates-total",
