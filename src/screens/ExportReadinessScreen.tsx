@@ -2,6 +2,8 @@ import { ClassSkillFormationExportPanel } from "@/components/admin/ClassSkillFor
 import { ClassSkillFormationValidationPanel } from "@/components/admin/ClassSkillFormationValidationPanel";
 import { ConfigExportSummaryPanel } from "@/components/admin/ConfigExportSummaryPanel";
 import { ConfigValidationResultPanel } from "@/components/admin/ConfigValidationResultPanel";
+import { EquipmentItemDropExportPanel } from "@/components/admin/EquipmentItemDropExportPanel";
+import { EquipmentItemDropValidationPanel } from "@/components/admin/EquipmentItemDropValidationPanel";
 import { ExportOrderPanel } from "@/components/admin/ExportOrderPanel";
 import { V1AAcceptanceChecklist } from "@/components/admin/V1AAcceptanceChecklist";
 import { ValidationChecklistPanel } from "@/components/admin/ValidationChecklistPanel";
@@ -23,6 +25,8 @@ export function ExportReadinessScreen() {
       <ConfigValidationResultPanel />
       <ClassSkillFormationExportPanel />
       <ClassSkillFormationValidationPanel />
+      <EquipmentItemDropExportPanel />
+      <EquipmentItemDropValidationPanel />
       <ExportOrderPanel />
       <ValidationChecklistPanel />
       <V1AAcceptanceChecklist />

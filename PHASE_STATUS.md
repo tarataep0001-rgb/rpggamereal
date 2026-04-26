@@ -16,7 +16,7 @@
 - Phase 11 - Admin / Safety / Launch Gate UI: completed
 - Phase 12 - Config Export Foundation: completed
 - Phase 13 - Skill / Class / Formation Config Export: completed
-- Phase 14 - Equipment / Item / Material / Drop Config Export: pending
+- Phase 14 - Equipment / Item / Material / Drop Config Export: completed
 - Phase 15 - Enemy / Boss / Stage Config Export: pending
 - Phase 16 - Core Game State / Save System: pending
 - Phase 17 - Server-Authoritative Battle Engine: pending

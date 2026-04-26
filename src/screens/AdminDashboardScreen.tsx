@@ -4,6 +4,7 @@ import { AuditLogPreview } from "@/components/admin/AuditLogPreview";
 import { ClassSkillFormationExportPanel } from "@/components/admin/ClassSkillFormationExportPanel";
 import { ConfigExportSummaryPanel } from "@/components/admin/ConfigExportSummaryPanel";
 import { EmergencyPausePanel } from "@/components/admin/EmergencyPausePanel";
+import { EquipmentItemDropExportPanel } from "@/components/admin/EquipmentItemDropExportPanel";
 import { PolicyStatusPanel } from "@/components/admin/PolicyStatusPanel";
 import { RegionPolicyPanel } from "@/components/admin/RegionPolicyPanel";
 import { RiskFlagPanel } from "@/components/admin/RiskFlagPanel";
@@ -50,6 +51,7 @@ export function AdminDashboardScreen() {
       <AdminRoleLimitPanel />
       <ConfigExportSummaryPanel />
       <ClassSkillFormationExportPanel />
+      <EquipmentItemDropExportPanel />
       <EmergencyPausePanel />
       <RiskFlagPanel />
       <RegionPolicyPanel />

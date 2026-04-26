@@ -761,6 +761,8 @@ export const mockAssets: MockAssetReference[] = [
     "icon_drop_stone",
     "icon_drop_skill_book",
     "icon_drop_star_chest",
+    "icon_boss_chest",
+    "icon_mixed_gear_chest",
   ].map((assetId) =>
     asset({
       asset_id: assetId,

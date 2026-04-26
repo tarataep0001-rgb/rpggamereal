@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-26T03:50:41.822Z",
+  "generated_at": "2026-04-26T08:23:18.707Z",
   "generator": "scripts/generate-local-assets.mjs",
   "safety_note": "Original local SVG placeholders only. No external, copyrighted, paid, WLD, payment, or production-money asset behavior.",
   "characters": [
@@ -936,6 +936,10 @@
       "path": "/assets/generated/ui/icon_auto_farm.svg"
     },
     {
+      "id": "icon_boss_chest",
+      "path": "/assets/generated/ui/icon_boss_chest.svg"
+    },
+    {
       "id": "icon_boss_contribution",
       "path": "/assets/generated/ui/icon_boss_contribution.svg"
     },
@@ -1354,6 +1358,10 @@
     {
       "id": "icon_mat_transfer_stone",
       "path": "/assets/generated/ui/icon_mat_transfer_stone.svg"
+    },
+    {
+      "id": "icon_mixed_gear_chest",
+      "path": "/assets/generated/ui/icon_mixed_gear_chest.svg"
     },
     {
       "id": "icon_no_duplicate",

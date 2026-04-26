@@ -37,6 +37,17 @@ const familyMeta: GearFamilyMeta[] = [
 const tiers: GearTier[] = [1, 2];
 const grades: GearGrade[] = ["Common", "Uncommon", "Rare"];
 
+const tierPrefixes: Record<GearTier, string> = {
+  1: "เหล็ก",
+  2: "เงิน",
+};
+
+const gradeSuffixes: Record<GearGrade, string> = {
+  Common: "ฝึกหัด",
+  Uncommon: "ชั้นดี",
+  Rare: "นักรบ",
+};
+
 export const equipmentSlots: GearSlot[] = [
   "Weapon",
   "Armor",
@@ -48,11 +59,13 @@ export const equipmentSlots: GearSlot[] = [
   "Charm",
 ];
 
+export const equipmentFamilyMeta = familyMeta;
+
 export const equipmentTemplates: EquipmentTemplate[] = familyMeta.flatMap((meta) =>
   tiers.flatMap((tier) =>
     grades.map((grade) => ({
       gear_template_id: `gear_${meta.family}_t${tier}_${grade.toLowerCase()}`,
-      display_name_th: `${meta.displayNameTh} T${tier} ${grade}`,
+      display_name_th: `${meta.displayNameTh}${tierPrefixes[tier]}${gradeSuffixes[grade]}`,
       family: meta.family,
       slot: meta.slot,
       tier,

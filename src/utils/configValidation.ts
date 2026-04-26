@@ -1,8 +1,10 @@
 import { configExportObjects, exportManifest } from "@/config/exportManifest";
+import { dropConfig } from "@/config/dropConfig";
 import { equipmentConfig } from "@/config/equipmentConfig";
 import { featureFlagsConfig } from "@/config/featureFlagsConfig";
 import { classConfig } from "@/config/classConfig";
 import { formationConfig } from "@/config/formationConfig";
+import { itemMaterialConfig } from "@/config/itemMaterialConfig";
 import { skillConfig } from "@/config/skillConfig";
 import { gachaBoxes } from "@/data/mockGacha";
 import type { ValidationStatus } from "@/types/game";
@@ -171,6 +173,95 @@ export function validateFormationConfigV1A(): boolean {
   );
 }
 
+export function validateEquipmentConfigV1A(): boolean {
+  const templateIds = equipmentConfig.templateRows.map((row) => row.gear_template_id);
+  const expectedFields = [
+    "gear_template_id",
+    "display_name_th",
+    "family",
+    "slot",
+    "tier",
+    "grade",
+    "required_min_level",
+    "class_restriction",
+    "main_stat_type",
+    "bind_type",
+    "schema_only",
+    "live_in_v1a",
+    "asset_id",
+    "config_version",
+  ] as const;
+
+  return (
+    equipmentConfig.templateRows.length === 78 &&
+    new Set(templateIds).size === templateIds.length &&
+    equipmentConfig.families.length === 13 &&
+    new Set(equipmentConfig.families).size === 13 &&
+    equipmentConfig.tiers.length === 2 &&
+    equipmentConfig.liveGrades.length === 3 &&
+    equipmentConfig.liveGrades.every((grade) => ["Common", "Uncommon", "Rare"].includes(grade)) &&
+    equipmentConfig.disabled.epicNormalDrop === true &&
+    equipmentConfig.disabled.setBonusSchemaOnly === true &&
+    equipmentConfig.disabled.craftingSchemaOnly === true &&
+    equipmentConfig.templateRows.every((row) =>
+      expectedFields.every((field) => row[field] !== undefined && row[field] !== null && row[field] !== ""),
+    ) &&
+    equipmentConfig.templateRows.every((row) => row.asset_id.startsWith("icon_gear_")) &&
+    equipmentConfig.templateRows.every((row) => equipmentConfig.familySlotMapping[row.family] === row.slot) &&
+    equipmentConfig.substatRules.duplicate_substat_type_allowed === false
+  );
+}
+
+export function validateItemMaterialConfigV1A(): boolean {
+  const itemIds = itemMaterialConfig.materialRows.map((row) => row.item_id);
+  const conversionIds = itemMaterialConfig.fragmentConversionRows.map((row) => row.conversion_id);
+  const hasConversion = (conversionId: string) =>
+    itemMaterialConfig.fragmentConversionRows.some((row) => row.conversion_id === conversionId);
+
+  return (
+    new Set(itemIds).size === itemIds.length &&
+    new Set(conversionIds).size === conversionIds.length &&
+    itemMaterialConfig.stackLimitConfig.Material === 9999 &&
+    itemMaterialConfig.stackLimitConfig.Ticket === 999 &&
+    itemMaterialConfig.stackLimitConfig["Character Shard"] === 9999 &&
+    hasConversion("convert_skill_book_fragment_to_skill_book") &&
+    hasConversion("convert_class_emblem_fragment_to_class_emblem") &&
+    hasConversion("convert_antibreak_fragment_to_antibreak_charm") &&
+    hasConversion("convert_advanced_emblem_fragment_to_advanced_emblem") &&
+    itemMaterialConfig.materialRows
+      .filter((row) => row.item_id.includes("advanced_emblem"))
+      .every((row) => row.schema_only && !row.live_in_v1a) &&
+    itemMaterialConfig.mailboxRoutingRules.wld_or_ledger_reward_uses_mailbox === false
+  );
+}
+
+function distributionTotalIs100(distribution: Record<string, number>): boolean {
+  return Object.values(distribution).reduce((sum, rate) => sum + rate, 0) === 100;
+}
+
+export function validateDropConfigV1A(): boolean {
+  const expectedDropTableIds = ([1, 2, 3, 4, 5] as const).flatMap((chapter) =>
+    ["normal", "elite", "mini_boss", "main_boss", "idle", "weekly_boss"].map(
+      (tableType) => `drop_ch${chapter}_${tableType}`,
+    ),
+  );
+  const actualDropTableIds = dropConfig.dropTableRows.map((row) => row.drop_table_id);
+
+  return (
+    Boolean(dropConfig.gearRollChance.normalFirstClear) &&
+    distributionTotalIs100(dropConfig.gradeDistribution.chapter1To3) &&
+    distributionTotalIs100(dropConfig.gradeDistribution.chapter4To5) &&
+    distributionTotalIs100(dropConfig.bossWeeklyRepeatReward.rates) &&
+    dropConfig.disabled.epicNormalDropInV1A === true &&
+    expectedDropTableIds.every((id) => actualDropTableIds.includes(id)) &&
+    dropConfig.dropTableRows.every((row) => row.epic_normal_drop_enabled === false) &&
+    dropConfig.bossWeeklyRepeatReward.frequency.includes("1 time per boss_id") &&
+    dropConfig.bossWeeklyRepeatReward.weeklyReset === "Monday 00:00 Asia/Bangkok" &&
+    dropConfig.gearChestRows.length === 5 &&
+    dropConfig.gearChestRows.every((row) => distributionTotalIs100(row.grade_table_snapshot))
+  );
+}
+
 export const configValidationResults: ConfigValidationResult[] = [
   {
     id: "manifest-unique-export-ids",
@@ -227,6 +318,24 @@ export const configValidationResults: ConfigValidationResult[] = [
     label: "equipment template count 78",
     status: equipmentConfig.templateCount === 78 ? "pass" : "fail",
     detail: `${equipmentConfig.templateCount} equipment templates referenced.`,
+  },
+  {
+    id: "equipment-config-v1a",
+    label: "equipment_config V1A rows valid",
+    status: validateEquipmentConfigV1A() ? "pass" : "fail",
+    detail: "78 templates, 13 families, 2 tiers, Common/Uncommon/Rare only, locks disabled.",
+  },
+  {
+    id: "item-material-config-v1a",
+    label: "item_material_config V1A rows valid",
+    status: validateItemMaterialConfigV1A() ? "pass" : "fail",
+    detail: "Unique material IDs, stack limits, fragment conversion rows, advanced emblem schema-only.",
+  },
+  {
+    id: "drop-config-v1a",
+    label: "drop_config V1A rows valid",
+    status: validateDropConfigV1A() ? "pass" : "fail",
+    detail: "Gear roll rates, 100% distributions, 30 drop table IDs, weekly boss rules.",
   },
   {
     id: "gacha-rates-total",
