@@ -11,14 +11,14 @@ export function SkillCastLogPreview({ logs }: SkillCastLogPreviewProps) {
     <GameCard>
       <SectionTitle eyebrow="Skills" title="บันทึกการใช้สกิล" />
       <div className="space-y-2">
-        {logs.map((log) => (
+        {logs.map((log, index) => (
           <article
             className="rounded-xl border border-white/10 bg-white/[0.03] p-3"
-            key={`${log.unit}-${log.skill_name}`}
+            key={`${log.unit}-${log.skill_name}-${index}`}
           >
             <div className="flex flex-wrap items-center justify-between gap-2">
               <p className="text-sm font-bold text-white">
-                {log.unit} · {log.skill_name}
+                {log.unit} / {log.skill_name}
               </p>
               <span className="rounded-full bg-violet-400/10 px-2 py-1 text-[11px] text-violet-100">
                 CD {log.cooldown_started}

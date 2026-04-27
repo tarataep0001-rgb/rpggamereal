@@ -40,7 +40,7 @@ export function BattleResultHero({ result }: BattleResultHeroProps) {
           </div>
           <h1 className="mt-3 text-3xl font-black text-white">ผลการต่อสู้</h1>
           <p className="mt-2 text-sm leading-6 text-slate-300">
-            {result.stage_id} · {result.chapter_name} · {getStageTypeBattleTone(result.stage_type)}
+            {result.stage_id} / {result.chapter_name} / {getStageTypeBattleTone(result.stage_type)}
           </p>
           <div className="mt-4 grid grid-cols-2 gap-2">
             <StatBadge label="Stars" value={stars} tone="gold" />
@@ -49,7 +49,7 @@ export function BattleResultHero({ result }: BattleResultHeroProps) {
             <StatBadge label="Stage type" value={result.stage_type} tone="green" />
           </div>
           <p className="mt-4 rounded-xl border border-white/10 bg-black/20 p-3 text-xs leading-5 text-slate-300">
-            No real battle calculation. Battle logs are mock/display only in this phase.
+            ผลนี้เป็น deterministic mock จาก Battle Engine Foundation ยังไม่ใช่ production server และยังไม่มี reward จริง
           </p>
         </div>
       </div>

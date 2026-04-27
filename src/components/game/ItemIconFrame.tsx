@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getLocalAssetImagePath } from "@/data/localAssetImages";
+import { getLocalAssetImage } from "@/data/localAssetImages";
 
 type ItemIconFrameProps = {
   assetId: string;
@@ -16,7 +16,9 @@ const toneClasses: Record<NonNullable<ItemIconFrameProps["tone"]>, string> = {
 };
 
 export function ItemIconFrame({ assetId, label, tone = "gold" }: ItemIconFrameProps) {
-  const imagePath = getLocalAssetImagePath(assetId);
+  const imageAsset = getLocalAssetImage(assetId);
+  const imagePath = imageAsset?.path ?? null;
+  const shouldContainImage = imageAsset?.status === "imported-local-image";
 
   return (
     <div className="space-y-1">
@@ -26,7 +28,7 @@ export function ItemIconFrame({ assetId, label, tone = "gold" }: ItemIconFramePr
         {imagePath ? (
           <Image
             alt={label}
-            className="object-cover"
+            className={shouldContainImage ? "object-contain p-1" : "object-cover"}
             fill
             loading="eager"
             sizes="80px"
@@ -38,7 +40,7 @@ export function ItemIconFrame({ assetId, label, tone = "gold" }: ItemIconFramePr
         )}
       </div>
       <p className="truncate text-[10px] text-slate-500">
-        {assetId} / {imagePath ? "generated-local-svg" : "placeholder"}
+        {assetId} / {imageAsset?.status ?? "placeholder"}
       </p>
     </div>
   );

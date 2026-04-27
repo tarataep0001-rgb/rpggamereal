@@ -24,7 +24,7 @@ export function DamageLogPreview({ logs }: DamageLogPreviewProps) {
                 #{log.action_no} {log.attacker} → {log.target}
               </p>
               <span className="rounded-full bg-black/25 px-2 py-1 text-[11px] text-slate-300">
-                {log.crit ? "CRIT" : "normal"} · {log.element_modifier}
+                {log.crit ? "CRIT" : "normal"} / {log.element_modifier}
               </span>
             </div>
             <p className="mt-1 text-xs text-slate-400">{log.skill}</p>
@@ -38,8 +38,8 @@ export function DamageLogPreview({ logs }: DamageLogPreviewProps) {
         ))}
       </div>
       <div className="mt-3 rounded-xl border border-sky-300/20 bg-sky-400/10 p-3 text-xs leading-5 text-sky-100">
-        final {formatDamageNumber(totals.finalDamage)} · shield {formatDamageNumber(totals.shieldDamage)} · actual HP{" "}
-        {formatDamageNumber(totals.actualHpDamage)} · overkill {formatDamageNumber(totals.overkillDamage)}
+        final {formatDamageNumber(totals.finalDamage)} / shield {formatDamageNumber(totals.shieldDamage)} / actual HP{" "}
+        {formatDamageNumber(totals.actualHpDamage)} / overkill {formatDamageNumber(totals.overkillDamage)}
       </div>
     </GameCard>
   );

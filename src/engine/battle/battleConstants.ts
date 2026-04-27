@@ -1,0 +1,45 @@
+export const BATTLE_ENGINE_VERSION = "v1a-battle-engine-foundation-001";
+export const BATTLE_FORMULA_VERSION = "v1a-battle-formula-foundation-001";
+
+export const battleConstants = {
+  maxMp: 100,
+  battleStartMp: 0,
+  normalAttackMpGain: 20,
+  mpGainActionCap: 40,
+  normalAttackCoef: 1,
+  baseCrit: 5,
+  baseCritDamageMultiplier: 1.5,
+  critDamageCap: 3,
+  hitChanceFloor: 5,
+  hitChanceCeiling: 95,
+  turnLimitByStageType: {
+    normal: 30,
+    elite: 30,
+    "mini-boss": 40,
+    "main-boss": 50,
+  },
+  positiveBuffCaps: {
+    ATK: 0.8,
+    MAG: 0.8,
+    DEF: 0.8,
+    RES: 0.8,
+    HP: 0.8,
+    SPD: 0.5,
+    CRIT: 50,
+    CRIT_DMG: 100,
+    EVA: 50,
+    ACC: 50,
+    MPGain: 0.5,
+    HealPower: 0.5,
+    DebuffChance: 0.5,
+  },
+  debuffCaps: {
+    DEF: -0.5,
+    RES: -0.5,
+    ATK: -0.4,
+    MAG: -0.4,
+    SPD: -0.4,
+    ACC: -50,
+    EVA: -50,
+  },
+} as const;

@@ -29,10 +29,10 @@ export function StatusEffectSummary({ logs }: StatusEffectSummaryProps) {
         ))}
       </div>
       <div className="space-y-2">
-        {logs.map((log) => (
+        {logs.map((log, index) => (
           <div
             className="rounded-xl border border-white/10 bg-white/[0.03] p-3"
-            key={`${log.source}-${log.target}-${log.status_name}`}
+            key={`${log.source}-${log.target}-${log.status_name}-${index}`}
           >
             <div className="flex items-center justify-between gap-3">
               <p className="text-sm font-bold text-white">{log.status_name}</p>
@@ -41,7 +41,7 @@ export function StatusEffectSummary({ logs }: StatusEffectSummaryProps) {
               </span>
             </div>
             <p className="mt-1 text-xs leading-5 text-slate-400">
-              {log.source} → {log.target} · chance/result mock {log.chance}%
+              {log.source} → {log.target} / chance/result mock {log.chance}%
             </p>
           </div>
         ))}

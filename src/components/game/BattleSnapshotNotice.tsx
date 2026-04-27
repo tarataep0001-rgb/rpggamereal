@@ -37,8 +37,7 @@ export function BattleSnapshotNotice({ result }: BattleSnapshotNoticeProps) {
         </div>
       </div>
       <p className="mt-3 rounded-xl border border-amber-300/25 bg-amber-400/10 p-3 text-xs leading-5 text-amber-100">
-        ข้อมูลนี้เป็น mock battle log สำหรับ prototype เท่านั้น ระบบจริงต้องใช้
-        server-authoritative snapshot และ deterministic replay test
+        ข้อมูลนี้เป็น deterministic mock battle log สำหรับ prototype เท่านั้น ระบบจริงต้องใช้ server-authoritative snapshot และ deterministic replay test
       </p>
     </GameCard>
   );

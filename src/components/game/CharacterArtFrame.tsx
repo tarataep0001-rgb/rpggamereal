@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getLocalAssetImagePath } from "@/data/localAssetImages";
+import { getLocalAssetImage } from "@/data/localAssetImages";
 import { mockAssets } from "@/data/mockAssets";
 
 type CharacterArtFrameProps = {
@@ -20,7 +20,9 @@ export function CharacterArtFrame({
   tone = "gold",
 }: CharacterArtFrameProps) {
   const asset = mockAssets.find((item) => item.asset_id === assetId);
-  const imagePath = getLocalAssetImagePath(assetId);
+  const imageAsset = getLocalAssetImage(assetId);
+  const imagePath = imageAsset?.path ?? null;
+  const shouldContainImage = imageAsset?.status === "imported-local-image";
 
   return (
     <div className="space-y-2">
@@ -30,7 +32,7 @@ export function CharacterArtFrame({
         {imagePath ? (
           <Image
             alt={label}
-            className="object-cover"
+            className={shouldContainImage ? "object-contain p-1" : "object-cover"}
             fill
             loading="eager"
             sizes="112px"
@@ -46,7 +48,7 @@ export function CharacterArtFrame({
       </div>
       <div className="rounded-xl border border-white/10 bg-white/5 p-2 text-[11px] leading-5 text-slate-300">
         <p>asset_id: {assetId}</p>
-        <p>status: {imagePath ? "generated-local-svg" : asset?.status ?? "placeholder"}</p>
+        <p>status: {imageAsset?.status ?? asset?.status ?? "placeholder"}</p>
       </div>
     </div>
   );

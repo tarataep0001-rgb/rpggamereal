@@ -8,12 +8,15 @@ export type LocalAssetImage = {
   kind: "character" | "skill" | "equipment" | "ui";
   label: string;
   path: string;
-  status: "generated-local-svg";
+  status: "generated-local-svg" | "imported-local-image";
   safetyNote: string;
 };
 
 const safetyNote =
   "Original local SVG placeholder. No external URL, copyrighted asset, paid asset, WLD, payment, ledger, or production-money behavior.";
+
+const importedImageSafetyNote =
+  "User-provided local imported image. No external URL, paid asset, WLD, payment, ledger, or production-money behavior.";
 
 export const characterImageAssets: LocalAssetImage[] = [
   mainCharacter,
@@ -98,10 +101,74 @@ const assetAliases: Record<string, string> = {
   icon_skill_mage_arcane_burst: "mage_arcane_burst_03",
 };
 
-export function getLocalAssetImagePath(entityId: string): string | null {
+function createImportedCharacterImage(entityId: string, className: string): LocalAssetImage {
+  return {
+    entityId,
+    kind: "character",
+    label: `Imported ${className} Class Portrait / local PNG`,
+    path: `/assets/generated/characters/${entityId}.png`,
+    status: "imported-local-image",
+    safetyNote: importedImageSafetyNote,
+  };
+}
+
+const importedSwordsmanImage = createImportedCharacterImage(
+  "swordsman_override",
+  "Swordsman",
+);
+const importedArcherImage = createImportedCharacterImage("archer_override", "Archer");
+const importedThiefImage = createImportedCharacterImage("thief_override", "Thief");
+const importedMageImage = createImportedCharacterImage("mage_override", "Mage");
+const importedPriestImage = createImportedCharacterImage("priest_override", "Priest");
+
+const localAssetImageOverrides: Record<string, LocalAssetImage> = {
+  main_hero: importedSwordsmanImage,
+  ch_common_sword_fire_guard: importedSwordsmanImage,
+  ch_uncommon_sword_earth_guard: importedSwordsmanImage,
+  ch_rare_sword_light_vanguard: importedSwordsmanImage,
+  portrait_main_swordsman_hero: importedSwordsmanImage,
+  hero_portrait_swordsman: importedSwordsmanImage,
+  portrait_class_swordsman: importedSwordsmanImage,
+  icon_class_swordsman: importedSwordsmanImage,
+  card_unit_swordsman_front: importedSwordsmanImage,
+  ch_common_archer_wind_shot: importedArcherImage,
+  ch_uncommon_archer_fire_burst: importedArcherImage,
+  ch_rare_archer_wind_hunter: importedArcherImage,
+  portrait_class_archer: importedArcherImage,
+  icon_class_archer: importedArcherImage,
+  card_unit_archer_backline: importedArcherImage,
+  ch_common_thief_dark_cut: importedThiefImage,
+  ch_uncommon_thief_wind_dash: importedThiefImage,
+  ch_rare_thief_dark_stalker: importedThiefImage,
+  portrait_class_thief: importedThiefImage,
+  icon_class_thief: importedThiefImage,
+  card_unit_thief_speed: importedThiefImage,
+  ch_common_mage_fire_spark: importedMageImage,
+  ch_uncommon_mage_water_wave: importedMageImage,
+  ch_rare_mage_earth_sage: importedMageImage,
+  portrait_class_mage: importedMageImage,
+  icon_class_mage: importedMageImage,
+  ch_common_priest_light_aid: importedPriestImage,
+  ch_uncommon_priest_water_care: importedPriestImage,
+  ch_rare_priest_light_oracle: importedPriestImage,
+  starter_teammate_priest_light: importedPriestImage,
+  portrait_starter_priest_light: importedPriestImage,
+  portrait_class_priest: importedPriestImage,
+  icon_class_priest: importedPriestImage,
+  card_unit_priest_support: importedPriestImage,
+};
+
+export function getLocalAssetImage(entityId: string): LocalAssetImage | null {
   const normalizedId = assetAliases[entityId] ?? entityId;
 
   return (
-    localAssetImages.find((asset) => asset.entityId === normalizedId)?.path ?? null
+    localAssetImageOverrides[entityId] ??
+    localAssetImageOverrides[normalizedId] ??
+    localAssetImages.find((asset) => asset.entityId === normalizedId) ??
+    null
   );
+}
+
+export function getLocalAssetImagePath(entityId: string): string | null {
+  return getLocalAssetImage(entityId)?.path ?? null;
 }
