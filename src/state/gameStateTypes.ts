@@ -100,6 +100,16 @@ export type StageProgressState = {
   starRatings: Record<string, 0 | 1 | 2 | 3>;
   firstClearClaimed: Record<string, boolean>;
   starChestClaimed: Record<string, boolean>;
+  rewardedReplayCounters: Record<string, { businessDate: string; count: number; cap: number }>;
+  lastRewardLogPreview: {
+    log_id: string;
+    stage_id: string;
+    reward_snapshot_id: string;
+    local_mock_only: true;
+    no_wld_reward: true;
+    no_paid_gem_reward: true;
+    no_ledger: true;
+  } | null;
   selectedStageId: string;
 };
 

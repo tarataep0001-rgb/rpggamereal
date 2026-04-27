@@ -4,16 +4,25 @@ import { BattleRuleReference } from "@/components/game/BattleRuleReference";
 import { BattleSnapshotNotice } from "@/components/game/BattleSnapshotNotice";
 import { BattleTurnSummary } from "@/components/game/BattleTurnSummary";
 import { DamageLogPreview } from "@/components/game/DamageLogPreview";
+import { ProgressionDebugPanel } from "@/components/game/ProgressionDebugPanel";
+import { ReplayRewardPanel } from "@/components/game/ReplayRewardPanel";
+import { RewardAtomicityPanel } from "@/components/game/RewardAtomicityPanel";
 import { SkillCastLogPreview } from "@/components/game/SkillCastLogPreview";
+import { StageProgressSummary } from "@/components/game/StageProgressSummary";
+import { StageRewardPreview } from "@/components/game/StageRewardPreview";
+import { StageUnlockPanel } from "@/components/game/StageUnlockPanel";
+import { StarChestPanel } from "@/components/game/StarChestPanel";
 import { StarRatingBreakdown } from "@/components/game/StarRatingBreakdown";
 import { StatusEffectSummary } from "@/components/game/StatusEffectSummary";
 import { FeatureLockBadge } from "@/components/ui/FeatureLockBadge";
 import { GameCard } from "@/components/ui/GameCard";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { createMockBattleInput, runBattle } from "@/engine/battle";
+import { createMockStageProgressInput, processBattleForStageProgress } from "@/engine/progression";
 
 export function BattleResultScreen() {
-  const battleResult = runBattle(createMockBattleInput());
+  const progressInput = createMockStageProgressInput();
+  const battleResult = progressInput.battleResult;
+  const stageProgress = processBattleForStageProgress(progressInput);
 
   return (
     <div className="space-y-4 px-4">
@@ -34,9 +43,22 @@ export function BattleResultScreen() {
         </div>
       </GameCard>
 
+      <StageProgressSummary progress={stageProgress} />
+      <StageUnlockPanel progress={stageProgress} />
+
       <div className="grid gap-4 xl:grid-cols-[0.85fr_1.15fr]">
         <BattleRewardSummary result={battleResult} />
         <StarRatingBreakdown result={battleResult} />
+      </div>
+
+      <div className="grid gap-4 xl:grid-cols-2">
+        <StageRewardPreview progress={stageProgress} />
+        <StarChestPanel progress={stageProgress} />
+      </div>
+
+      <div className="grid gap-4 xl:grid-cols-2">
+        <ReplayRewardPanel progress={stageProgress} />
+        <RewardAtomicityPanel progress={stageProgress} />
       </div>
 
       <BattleTurnSummary summary={battleResult.turn_summary} />
@@ -51,20 +73,21 @@ export function BattleResultScreen() {
         <BattleSnapshotNotice result={battleResult} />
       </div>
 
+      <ProgressionDebugPanel progress={stageProgress} />
       <BattleRuleReference />
 
       <GameCard className="border-rose-300/25">
-        <SectionTitle eyebrow="Safety / Scope" title="Battle Result Phase Scope" />
+        <SectionTitle eyebrow="Safety / Scope" title="Battle Result + Stage Progress Scope" />
         <div className="mb-4 flex flex-wrap gap-2">
           <FeatureLockBadge label="Foundation mock only" status="schema-only" />
-          <FeatureLockBadge label="No production battle server" status="disabled" />
+          <FeatureLockBadge label="No production reward authority" status="disabled" />
           <FeatureLockBadge label="No WLD rewards" status="disabled" />
           <FeatureLockBadge label="Production NO-GO" status="disabled" />
         </div>
         <div className="space-y-2 text-sm leading-6 text-slate-300">
-          <p>ระบบต่อสู้จริงยังไม่ใช่ production server ใน Phase นี้</p>
-          <p>No backend, no paid feature, no WLD reward, and no ledger authority.</p>
-          <p>ยังไม่มีการรัน simulation จริง และไม่ได้อ้างว่า legal/policy/security review เสร็จแล้ว</p>
+          <p>First Clear รับได้ครั้งเดียว และ StarChest รับได้ครั้งเดียวเมื่อทำ 3 ดาวครั้งแรก</p>
+          <p>Replay Reward ใช้โควตารายวันและ Bangkok business date แบบ local mock เท่านั้น</p>
+          <p>ระบบจริงต้องใช้ server-authoritative reward snapshot ไม่มี ledger จริง และไม่มี WLD Reward ใน V1A</p>
         </div>
       </GameCard>
     </div>

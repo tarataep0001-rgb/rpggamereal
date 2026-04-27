@@ -182,6 +182,14 @@ export function createInitialGameState(): CoreGameState {
         "1-1": true,
         "1-5": false,
       },
+      rewardedReplayCounters: {
+        "1-3": {
+          businessDate: "2026-04-27",
+          count: 2,
+          cap: 10,
+        },
+      },
+      lastRewardLogPreview: null,
       selectedStageId: "1-6",
     },
     inventory: {

@@ -20,7 +20,7 @@
 - Phase 15 - Enemy / Boss / Stage Config Export: completed
 - Phase 16 - Core Game State / Save System: completed
 - Phase 17 - Server-Authoritative Battle Engine Foundation: completed
-- Phase 18 - Stage Progress / Reward / Replay System: pending
+- Phase 18 - Stage Progress / Reward / Replay System: completed
 - Phase 19 - Character / Skill / Class Progression: pending
 - Phase 20 - Inventory / Equipment / Enhancement / Salvage: pending
 - Phase 21 - Gacha / Shard / Pity System: pending

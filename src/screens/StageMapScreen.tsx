@@ -8,11 +8,14 @@ import { EnemyCompositionPreview } from "@/components/game/EnemyCompositionPrevi
 import { StageDetailPanel } from "@/components/game/StageDetailPanel";
 import { StageLegend } from "@/components/game/StageLegend";
 import { StageMapPath } from "@/components/game/StageMapPath";
+import { StageProgressSummary } from "@/components/game/StageProgressSummary";
+import { ReplayRewardPanel } from "@/components/game/ReplayRewardPanel";
 import { FeatureLockBadge } from "@/components/ui/FeatureLockBadge";
 import { GameCard } from "@/components/ui/GameCard";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { mockPlayer } from "@/data/mockPlayer";
 import { mockStages } from "@/data/mockStages";
+import { createMockStageProgressInput, processBattleForStageProgress } from "@/engine/progression";
 import type { ChapterId, StageNode } from "@/types/game";
 import {
   chapterLore,
@@ -45,6 +48,7 @@ export function StageMapScreen() {
     nextSuggestedStage;
   const selectedLore = chapterLore[chapterId];
   const totalProgress = getChapterProgress(mockStages);
+  const stageProgressPreview = processBattleForStageProgress(createMockStageProgressInput());
 
   function handleSelectChapter(nextChapter: ChapterId) {
     setChapterId(nextChapter);
@@ -89,6 +93,11 @@ export function StageMapScreen() {
           ))}
         </div>
       </GameCard>
+
+      <div className="grid gap-4 xl:grid-cols-2">
+        <StageProgressSummary compact progress={stageProgressPreview} />
+        <ReplayRewardPanel progress={stageProgressPreview} />
+      </div>
 
       <GameCard>
         <SectionTitle eyebrow="Chapters" title="Chapter Tabs" />

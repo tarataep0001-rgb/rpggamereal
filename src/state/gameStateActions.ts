@@ -1,6 +1,8 @@
 import type { CellId } from "@/types/game";
 import { initialGameState } from "@/state/initialGameState";
 import type { CoreGameState } from "@/state/gameStateTypes";
+import type { ProcessedStageProgressResult } from "@/engine/progression";
+import { applyLocalStageProgressPreview } from "@/engine/progression";
 
 function withUpdatedSnapshot(state: CoreGameState): CoreGameState {
   const units = Object.entries(state.teamFormation.deployedUnits)
@@ -102,4 +104,11 @@ export function runGachaMockPreview(state: CoreGameState): CoreGameState {
       ],
     },
   };
+}
+
+export function processMockStageClear(
+  state: CoreGameState,
+  processedResult: ProcessedStageProgressResult,
+): CoreGameState {
+  return applyLocalStageProgressPreview(state, processedResult);
 }
