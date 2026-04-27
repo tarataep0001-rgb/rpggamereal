@@ -7,3 +7,7 @@ export * from "./rewardAtomicity";
 export * from "./stageProgressEngine";
 export * from "./mockStageProgressInput";
 export * from "./progressValidation";
+export * from "./characterProgressionTypes";
+export * from "./characterProgressionEngine";
+export * from "./characterProgressionValidation";
+export * from "./mockCharacterProgressionInput";

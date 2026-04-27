@@ -1,14 +1,22 @@
 import { CharacterDetailPanel } from "@/components/game/CharacterDetailPanel";
+import { CharacterProgressSummary } from "@/components/game/CharacterProgressSummary";
+import { ClassRoadmapLockPanel } from "@/components/game/ClassRoadmapLockPanel";
 import { ClassPathTimeline } from "@/components/game/ClassPathTimeline";
 import { ClassPreviewCard } from "@/components/game/ClassPreviewCard";
+import { ProgressionValidationPanel } from "@/components/game/ProgressionValidationPanel";
+import { ResetTicketRulePanel } from "@/components/game/ResetTicketRulePanel";
+import { SkillUnlockTimeline } from "@/components/game/SkillUnlockTimeline";
 import { StarterWeaponCard } from "@/components/game/StarterWeaponCard";
 import { StatGrid } from "@/components/game/StatGrid";
+import { TeammateStarPreview } from "@/components/game/TeammateStarPreview";
+import { XpProgressPanel } from "@/components/game/XpProgressPanel";
 import { FeatureLockBadge } from "@/components/ui/FeatureLockBadge";
 import { GameCard } from "@/components/ui/GameCard";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { StatBadge } from "@/components/ui/StatBadge";
 import { class1Previews, classStatTemplates, mainCharacter } from "@/data/mockCharacters";
 import { mockSkills } from "@/data/mockSkills";
+import { createMockCharacterProgressionInput, processCharacterProgressionPreview } from "@/engine/progression";
 
 const swordsmanSkillUnlocks = [
   { level: 10, skillId: "swordsman_slash_01", label: "ฟันผ่า" },
@@ -18,10 +26,13 @@ const swordsmanSkillUnlocks = [
 
 export function CharacterScreen() {
   const swordsmanTemplate = classStatTemplates.Swordsman;
+  const characterProgression = processCharacterProgressionPreview(createMockCharacterProgressionInput());
 
   return (
     <div className="space-y-4 px-4">
       <CharacterDetailPanel />
+      <CharacterProgressSummary progression={characterProgression} />
+      <XpProgressPanel progression={characterProgression} />
 
       <GameCard>
         <SectionTitle eyebrow="Stats" title="Combat stat sheet" />
@@ -46,6 +57,7 @@ export function CharacterScreen() {
       </GameCard>
 
       <ClassPathTimeline />
+      <ClassRoadmapLockPanel progression={characterProgression} />
 
       <GameCard>
         <SectionTitle eyebrow="Class 1" title="Class selector / preview" />
@@ -62,6 +74,8 @@ export function CharacterScreen() {
           Other Class 1 cards are preview only for this mock. Selection/reset flow is not implemented in V1A UI phase.
         </p>
       </GameCard>
+
+      <SkillUnlockTimeline progression={characterProgression} />
 
       <GameCard>
         <SectionTitle eyebrow="Skills" title="Class 1 unlock summary" />
@@ -93,6 +107,9 @@ export function CharacterScreen() {
       </GameCard>
 
       <StarterWeaponCard />
+      <TeammateStarPreview progression={characterProgression} />
+      <ResetTicketRulePanel progression={characterProgression} />
+      <ProgressionValidationPanel progression={characterProgression} />
 
       <GameCard>
         <SectionTitle eyebrow="Teammates" title="Gacha teammate system note" />

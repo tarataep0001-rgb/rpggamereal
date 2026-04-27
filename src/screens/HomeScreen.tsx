@@ -1,4 +1,5 @@
 import type { ScreenId } from "@/types/game";
+import { CharacterProgressSummary } from "@/components/game/CharacterProgressSummary";
 import { SaveStatusPanel } from "@/components/game/SaveStatusPanel";
 import { SaveWarningPanel } from "@/components/game/SaveWarningPanel";
 import { StageProgressSummary } from "@/components/game/StageProgressSummary";
@@ -14,6 +15,7 @@ import {
   TeamSnapshotCard,
 } from "@/components/game/HomeDashboardCards";
 import { createMockStageProgressInput, processBattleForStageProgress } from "@/engine/progression";
+import { createMockCharacterProgressionInput, processCharacterProgressionPreview } from "@/engine/progression";
 
 type HomeScreenProps = {
   onNavigate: (screen: ScreenId) => void;
@@ -21,11 +23,13 @@ type HomeScreenProps = {
 
 export function HomeScreen({ onNavigate }: HomeScreenProps) {
   const stageProgressPreview = processBattleForStageProgress(createMockStageProgressInput());
+  const characterProgressionPreview = processCharacterProgressionPreview(createMockCharacterProgressionInput());
 
   return (
     <div className="space-y-4 px-4">
       <HeroStatusCard />
       <SaveStatusPanel />
+      <CharacterProgressSummary compact progression={characterProgressionPreview} />
       <StageProgressSummary compact progress={stageProgressPreview} />
       <CurrencySummaryCard />
       <MainCharacterPreviewCard />

@@ -1,5 +1,8 @@
 import { FutureSkillLockPanel } from "@/components/game/FutureSkillLockPanel";
+import { ProgressionValidationPanel } from "@/components/game/ProgressionValidationPanel";
 import { SkillDetailPanel } from "@/components/game/SkillDetailPanel";
+import { SkillUnlockTimeline } from "@/components/game/SkillUnlockTimeline";
+import { SkillUpgradePreview } from "@/components/game/SkillUpgradePreview";
 import { SkillLibrarySection } from "@/components/game/SkillLibrarySection";
 import { SkillLoadoutPanel } from "@/components/game/SkillLoadoutPanel";
 import { SkillPriorityRuleCard } from "@/components/game/SkillPriorityRuleCard";
@@ -8,6 +11,7 @@ import { FeatureLockBadge } from "@/components/ui/FeatureLockBadge";
 import { GameCard } from "@/components/ui/GameCard";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { mockSkills } from "@/data/mockSkills";
+import { createMockCharacterProgressionInput, processCharacterProgressionPreview } from "@/engine/progression";
 import {
   classOrder,
   getSkillsForClass,
@@ -22,6 +26,7 @@ const equippedSwordsmanSkillIds = [
 ];
 
 export function SkillPriorityScreen() {
+  const characterProgression = processCharacterProgressionPreview(createMockCharacterProgressionInput());
   const groupedSkills = groupSkillsByClass(mockSkills);
   const swordsmanSkills = getSkillsForClass(mockSkills, "Swordsman");
   const loadoutSkills = sortEquippedSkillsByPriority(
@@ -60,6 +65,13 @@ export function SkillPriorityScreen() {
       </GameCard>
 
       <SkillLoadoutPanel skills={loadoutSkills} />
+
+      <div className="grid gap-4 xl:grid-cols-2">
+        <SkillUnlockTimeline progression={characterProgression} />
+        <SkillUpgradePreview progression={characterProgression} />
+      </div>
+
+      <ProgressionValidationPanel progression={characterProgression} />
 
       <SkillDetailPanel skill={featuredSkill} />
 
