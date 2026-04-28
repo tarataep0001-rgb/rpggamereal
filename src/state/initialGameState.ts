@@ -201,6 +201,7 @@ export function createInitialGameState(): CoreGameState {
       tickets: [...mockInventory.tickets],
       shards: [...mockInventory.shards],
       mailboxPreview: [...mockInventory.mailboxPreview],
+      lastInventoryActionPreview: null,
     },
     idle: {
       idleStage: mockIdle.idleStage,

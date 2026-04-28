@@ -7,6 +7,7 @@ import {
   hydrateFromMockData,
   markStageSelectedMock,
   processMockStageClear,
+  previewInventoryActionMock,
   claimIdleMockPreview,
   runGachaMockPreview,
   updateFormationMock,
@@ -16,6 +17,7 @@ import { loadLocalSave, resetLocalSave, saveLocalState } from "@/state/saveSyste
 import { validateCoreGameStateSave } from "@/state/saveValidation";
 import type { CellId } from "@/types/game";
 import type { ProcessedStageProgressResult } from "@/engine/progression";
+import type { InventoryEngineResult } from "@/engine/inventory";
 
 type GameStateContextValue = {
   state: CoreGameState;
@@ -28,6 +30,7 @@ type GameStateContextValue = {
   updateSkillLoadoutMock: (priorityOrder: string[]) => void;
   markStageSelectedMock: (stageId: string) => void;
   processMockStageClear: (processedResult: ProcessedStageProgressResult) => void;
+  previewInventoryActionMock: (result: InventoryEngineResult) => void;
   claimIdleMockPreview: () => void;
   runGachaMockPreview: () => void;
 };
@@ -102,6 +105,9 @@ export function GameStateProvider({ children }: { children: ReactNode }) {
       },
       processMockStageClear: (processedResult) => {
         setState((current) => processMockStageClear(current, processedResult));
+      },
+      previewInventoryActionMock: (result) => {
+        setState((current) => previewInventoryActionMock(current, result));
       },
       claimIdleMockPreview: () => {
         setState((current) => claimIdleMockPreview(current));

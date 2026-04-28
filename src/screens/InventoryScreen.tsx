@@ -1,10 +1,17 @@
+import { EnhancementLogPreview } from "@/components/game/EnhancementLogPreview";
+import { EnhancementPreviewPanel } from "@/components/game/EnhancementPreviewPanel";
+import { EnhancementSuccessTable } from "@/components/game/EnhancementSuccessTable";
+import { EquipmentActionPreview } from "@/components/game/EquipmentActionPreview";
 import { EquipmentSlotGrid } from "@/components/game/EquipmentSlotGrid";
 import { GearItemCard } from "@/components/game/GearItemCard";
+import { InventoryActionDebugPanel } from "@/components/game/InventoryActionDebugPanel";
 import { InventorySummaryCard } from "@/components/game/InventorySummaryCard";
+import { InventoryValidationPanel } from "@/components/game/InventoryValidationPanel";
 import { ItemIconFrame } from "@/components/game/ItemIconFrame";
 import { MailboxOverflowPanel } from "@/components/game/MailboxOverflowPanel";
 import { MaterialStackCard } from "@/components/game/MaterialStackCard";
 import { SalvageRulePanel } from "@/components/game/SalvageRulePanel";
+import { TransferPreviewPanel } from "@/components/game/TransferPreviewPanel";
 import { FeatureLockBadge } from "@/components/ui/FeatureLockBadge";
 import { GameCard } from "@/components/ui/GameCard";
 import { SectionTitle } from "@/components/ui/SectionTitle";
@@ -12,10 +19,13 @@ import { StatBadge } from "@/components/ui/StatBadge";
 import { equipmentSlots } from "@/data/mockEquipment";
 import { mockInventory } from "@/data/mockInventory";
 import { mockPlayer } from "@/data/mockPlayer";
+import { createMockInventoryInput, processInventoryPreview } from "@/engine/inventory";
 import { formatNumber } from "@/utils/formatting";
 import { getStackLimitByItemType } from "@/utils/inventory";
 
 export function InventoryScreen() {
+  const inventoryPreview = processInventoryPreview(createMockInventoryInput());
+
   return (
     <div className="space-y-4 px-4">
       <InventorySummaryCard
@@ -38,6 +48,20 @@ export function InventoryScreen() {
           withdrawal, ledger, and production money logic are not implemented.
         </p>
       </GameCard>
+
+      <EquipmentActionPreview result={inventoryPreview} />
+
+      <div className="grid gap-4 xl:grid-cols-2">
+        <EnhancementPreviewPanel result={inventoryPreview} />
+        <EnhancementSuccessTable />
+      </div>
+
+      <div className="grid gap-4 xl:grid-cols-2">
+        <EnhancementLogPreview result={inventoryPreview} />
+        <TransferPreviewPanel result={inventoryPreview} />
+      </div>
+
+      <InventoryValidationPanel result={inventoryPreview} />
 
       <GameCard>
         <SectionTitle eyebrow="Equipment / ช่องอุปกรณ์" title="Equipped slots" />
@@ -103,6 +127,8 @@ export function InventoryScreen() {
         normalMailExpiryDays={mockInventory.normalMailExpiryDays}
         overflowMailExpiryDays={mockInventory.overflowMailExpiryDays}
       />
+
+      <InventoryActionDebugPanel result={inventoryPreview} />
     </div>
   );
 }

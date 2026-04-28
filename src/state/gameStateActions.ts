@@ -1,6 +1,7 @@
 import type { CellId } from "@/types/game";
 import { initialGameState } from "@/state/initialGameState";
 import type { CoreGameState } from "@/state/gameStateTypes";
+import type { InventoryEngineResult } from "@/engine/inventory";
 import type { ProcessedStageProgressResult } from "@/engine/progression";
 import { applyLocalStageProgressPreview } from "@/engine/progression";
 
@@ -111,4 +112,25 @@ export function processMockStageClear(
   processedResult: ProcessedStageProgressResult,
 ): CoreGameState {
   return applyLocalStageProgressPreview(state, processedResult);
+}
+
+export function previewInventoryActionMock(
+  state: CoreGameState,
+  result: InventoryEngineResult,
+): CoreGameState {
+  return {
+    ...state,
+    inventory: {
+      ...state.inventory,
+      lastInventoryActionPreview: {
+        previewId: result.preview_id,
+        selectedGearId: result.selected_gear.gear_instance_id,
+        validationStatus: result.validation.status,
+        previewOnly: true,
+        noWld: true,
+        noPaidGem: true,
+        noLedger: true,
+      },
+    },
+  };
 }

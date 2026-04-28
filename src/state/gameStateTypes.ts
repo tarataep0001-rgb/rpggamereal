@@ -1,5 +1,6 @@
 import type { CellId, ClassName, LaunchStatus } from "@/types/game";
 import type { InventoryGearItem, InventoryMaterial, MailboxPreviewItem } from "@/data/mockInventory";
+import type { InventoryEngineResult } from "@/engine/inventory";
 
 export const LOCAL_SAVE_KEY = "realzenrpg.v1a.localSave";
 export const SAVE_SCHEMA_VERSION = "v1a-local-save-001";
@@ -122,6 +123,15 @@ export type InventoryState = {
   tickets: InventoryMaterial[];
   shards: InventoryMaterial[];
   mailboxPreview: MailboxPreviewItem[];
+  lastInventoryActionPreview: {
+    previewId: string;
+    selectedGearId: string;
+    validationStatus: InventoryEngineResult["validation"]["status"];
+    previewOnly: true;
+    noWld: true;
+    noPaidGem: true;
+    noLedger: true;
+  } | null;
 };
 
 export type IdleState = {
