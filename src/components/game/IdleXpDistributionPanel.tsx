@@ -7,12 +7,15 @@ type IdleXpDistributionPanelProps = {
     display_name: string;
     cell_id: string;
     xp_share_percent: number;
-    capped: boolean;
+    xp_gain_preview?: number;
+    capped?: boolean;
+    level_capped?: boolean;
   }>;
   undeployedPreview: ReadonlyArray<{
     character_id: string;
     display_name: string;
     xp_share_percent: number;
+    xp_gain_preview?: number;
   }>;
 };
 
@@ -34,7 +37,7 @@ export function IdleXpDistributionPanel({
               <span>{unit.xp_share_percent}% XP</span>
             </div>
             <p className="mt-1 text-xs text-emerald-100/70">
-              {unit.character_id} / {unit.cell_id} / {unit.capped ? "level capped" : "not capped"}
+              {unit.character_id} / {unit.cell_id} / {unit.capped || unit.level_capped ? "level capped" : "not capped"} / XP +{unit.xp_gain_preview ?? 0}
             </p>
           </div>
         ))}
@@ -47,14 +50,14 @@ export function IdleXpDistributionPanel({
               <p className="font-semibold text-slate-200">{unit.display_name}</p>
               <span>{unit.xp_share_percent}% XP</span>
             </div>
-            <p className="mt-1 text-xs text-slate-500">{unit.character_id} / undeployed</p>
+            <p className="mt-1 text-xs text-slate-500">{unit.character_id} / undeployed / XP +{unit.xp_gain_preview ?? 0}</p>
           </div>
         ))}
       </div>
       <div className="mt-4 text-sm leading-6 text-slate-300">
-        <p>ตัวละครที่อยู่ในทีมได้รับ XP 100%</p>
-        <p>ตัวละครที่ไม่ได้ลงทีมไม่ได้รับ XP</p>
-        <p>ตัวละครที่ถึงเลเวลสูงสุดจะไม่ได้รับ XP เพิ่ม และไม่มี conversion ใน V1A</p>
+        <p>Deployed units receive 100% XP.</p>
+        <p>Undeployed units receive 0% XP.</p>
+        <p>Level-capped units receive no extra XP and no conversion in V1A/V1B.</p>
       </div>
     </GameCard>
   );

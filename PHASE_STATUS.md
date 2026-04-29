@@ -24,7 +24,7 @@
 - Phase 19 - Character / Skill / Class Progression: completed
 - Phase 20 - Inventory / Equipment / Enhancement / Salvage: completed
 - Phase 21 - Gacha / Shard / Pity System: completed
-- Phase 22 - Idle / Auto Farm / Mission System: pending
+- Phase 22 - Idle / Auto Farm / Mission System: completed
 - Phase 23 - Guild / Guild Boss System: pending
 - Phase 24 - Admin / Audit / Config / Safety Flags: pending
 - Phase 25 - Simulation Suite: pending

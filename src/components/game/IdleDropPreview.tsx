@@ -12,6 +12,7 @@ const assetByItemId: Record<string, string> = {
   mat_enhancement_powder: "icon_mat_enhancement_powder",
   mat_skill_book_fragment: "icon_mat_skill_book_fragment",
   mock_gear_chest: "icon_reward_chest",
+  mock_idle_gear_chest: "icon_reward_chest",
 };
 
 export function IdleDropPreview({ drops }: IdleDropPreviewProps) {

@@ -2,6 +2,7 @@ import type { CellId } from "@/types/game";
 import { initialGameState } from "@/state/initialGameState";
 import type { CoreGameState } from "@/state/gameStateTypes";
 import { createMockGachaInput, runSinglePull } from "@/engine/gacha";
+import { createIdleMissionPreview, createMockIdleMissionInput, type MissionPreview } from "@/engine/idle";
 import type { InventoryEngineResult } from "@/engine/inventory";
 import type { ProcessedStageProgressResult } from "@/engine/progression";
 import { applyLocalStageProgressPreview } from "@/engine/progression";
@@ -73,6 +74,8 @@ export function markStageSelectedMock(state: CoreGameState, stageId: string): Co
 }
 
 export function claimIdleMockPreview(state: CoreGameState): CoreGameState {
+  const preview = createIdleMissionPreview(createMockIdleMissionInput({ state }));
+
   return {
     ...state,
     idle: {
@@ -80,6 +83,83 @@ export function claimIdleMockPreview(state: CoreGameState): CoreGameState {
       accumulatedHours: 0,
       xpReady: 0,
       goldReady: 0,
+      bangkokBusinessDate: preview.bangkok_business_date,
+      bangkokWeekKey: preview.bangkok_week_key,
+      lastIdleMissionPreview: preview,
+    },
+  };
+}
+
+export function previewIdleClaimMock(state: CoreGameState): CoreGameState {
+  const preview = createIdleMissionPreview(createMockIdleMissionInput({ state }));
+
+  return {
+    ...state,
+    idle: {
+      ...state.idle,
+      xpReady: preview.idle_reward.xp_ready,
+      goldReady: preview.idle_reward.gold_ready,
+      bangkokBusinessDate: preview.bangkok_business_date,
+      bangkokWeekKey: preview.bangkok_week_key,
+      lastIdleMissionPreview: preview,
+    },
+  };
+}
+
+export function previewAutoFarmMock(state: CoreGameState): CoreGameState {
+  const preview = createIdleMissionPreview(
+    createMockIdleMissionInput({
+      state,
+      accumulatedHours: Math.min(state.idle.maxIdleHours, state.idle.accumulatedHours + 2),
+    }),
+  );
+
+  return {
+    ...state,
+    idle: {
+      ...state.idle,
+      lastIdleMissionPreview: preview,
+    },
+  };
+}
+
+export function previewMissionClaimMock(state: CoreGameState, mission: MissionPreview): CoreGameState {
+  const preview = createIdleMissionPreview(createMockIdleMissionInput({ state }));
+  const isDaily = mission.frequency === "daily";
+  const claimedMissionIds = isDaily
+    ? state.idle.dailyMissionClaimedPreview
+    : state.idle.weeklyMissionClaimedPreview;
+  const nextClaimed = mission.claimable && !claimedMissionIds.includes(mission.mission_id)
+    ? [...claimedMissionIds, mission.mission_id]
+    : claimedMissionIds;
+
+  return {
+    ...state,
+    idle: {
+      ...state.idle,
+      dailyMissionClaimedPreview: isDaily ? nextClaimed : state.idle.dailyMissionClaimedPreview,
+      weeklyMissionClaimedPreview: isDaily ? state.idle.weeklyMissionClaimedPreview : nextClaimed,
+      lastIdleMissionPreview: preview,
+    },
+  };
+}
+
+export function resetIdleMissionMock(state: CoreGameState): CoreGameState {
+  const preview = createIdleMissionPreview(createMockIdleMissionInput());
+
+  return {
+    ...state,
+    idle: {
+      ...state.idle,
+      accumulatedHours: initialGameState.idle.accumulatedHours,
+      xpReady: initialGameState.idle.xpReady,
+      goldReady: initialGameState.idle.goldReady,
+      autoFarmUsedToday: initialGameState.idle.autoFarmUsedToday,
+      bangkokBusinessDate: preview.bangkok_business_date,
+      bangkokWeekKey: preview.bangkok_week_key,
+      dailyMissionClaimedPreview: [],
+      weeklyMissionClaimedPreview: [],
+      lastIdleMissionPreview: preview,
     },
   };
 }

@@ -43,6 +43,16 @@ export function validateCoreGameStateSave(state: CoreGameState): SaveValidationR
   if (state.gacha.paidGemGachaDisabled !== true) errors.push("Paid Gem gacha disabled snapshot must stay true.");
   if (state.gacha.box2Disabled !== true) errors.push("Box 2 disabled snapshot must stay true.");
   if (state.gacha.box3Disabled !== true) errors.push("Box 3 disabled snapshot must stay true.");
+  if (state.idle.maxIdleHours !== 8) errors.push("Idle max must remain 8 hours.");
+  if (state.idle.autoFarmFreePerDay !== 2) errors.push("Free Auto Farm must remain 2/day.");
+  if (state.idle.extraAutoFarmPrices.join(",") !== "20,40,60,80,100,120") {
+    errors.push("Extra Auto Farm price ladder mismatch.");
+  }
+  if (state.idle.lastIdleMissionPreview) {
+    if (state.idle.lastIdleMissionPreview.no_wld_reward !== true) errors.push("Idle mission preview must have no WLD reward.");
+    if (state.idle.lastIdleMissionPreview.no_paid_gem_reward !== true) errors.push("Idle mission preview must have no Paid Gem reward.");
+    if (state.idle.lastIdleMissionPreview.no_ledger !== true) errors.push("Idle mission preview must have no ledger.");
+  }
 
   if (state.inventory.inventorySlots < 0) errors.push("Inventory slots cannot be negative.");
   if (state.inventory.usedInventorySlots < 0) errors.push("Used inventory slots cannot be negative.");

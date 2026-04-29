@@ -1,4 +1,5 @@
 import { AdminOverviewPanel } from "@/components/admin/AdminOverviewPanel";
+import { IdleMissionFoundationPanel } from "@/components/admin/IdleMissionFoundationPanel";
 import { AdminRoleLimitPanel } from "@/components/admin/AdminRoleLimitPanel";
 import { AuditLogPreview } from "@/components/admin/AuditLogPreview";
 import { ClassSkillFormationExportPanel } from "@/components/admin/ClassSkillFormationExportPanel";
@@ -54,6 +55,7 @@ export function AdminDashboardScreen() {
       </GameCard>
 
       <AdminRoleLimitPanel />
+      <IdleMissionFoundationPanel />
       <ConfigExportSummaryPanel />
       <SaveStatusPanel />
       <LocalSaveControls />

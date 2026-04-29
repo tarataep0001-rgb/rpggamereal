@@ -2,6 +2,7 @@ import { featureFlagsConfig } from "@/config/featureFlagsConfig";
 import { box1GachaCharacters, mainCharacter, mockCharacters } from "@/data/mockCharacters";
 import { gachaBoxes, gachaLogPreview } from "@/data/mockGacha";
 import { createMockGachaInput, runSinglePull } from "@/engine/gacha";
+import { createIdleMissionPreview, createMockIdleMissionInput } from "@/engine/idle";
 import { mockGuild } from "@/data/mockGuild";
 import { mockIdle } from "@/data/mockIdle";
 import { mockInventory } from "@/data/mockInventory";
@@ -97,6 +98,7 @@ export function createInitialGameState(): CoreGameState {
       pullsSinceLastRare: gachaBox1.pityState.currentCounter,
     }),
   );
+  const initialIdleMissionPreview = createIdleMissionPreview(createMockIdleMissionInput());
 
   const state: CoreGameState = {
     metadata,
@@ -219,6 +221,11 @@ export function createInitialGameState(): CoreGameState {
       autoFarmFreePerDay: mockIdle.autoFarmFreePerDay,
       autoFarmUsedToday: mockIdle.autoFarmUsedToday,
       extraAutoFarmPrices: mockIdle.extraAutoFarmPrices,
+      bangkokBusinessDate: initialIdleMissionPreview.bangkok_business_date,
+      bangkokWeekKey: initialIdleMissionPreview.bangkok_week_key,
+      dailyMissionClaimedPreview: [],
+      weeklyMissionClaimedPreview: [],
+      lastIdleMissionPreview: initialIdleMissionPreview,
     },
     gacha: {
       activeBoxId: "box_1_v1a",

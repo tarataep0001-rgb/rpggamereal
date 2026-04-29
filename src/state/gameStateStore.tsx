@@ -6,12 +6,16 @@ import type { CoreGameState, GameStateRuntimeStatus } from "@/state/gameStateTyp
 import {
   hydrateFromMockData,
   markStageSelectedMock,
+  previewAutoFarmMock,
+  previewIdleClaimMock,
   processMockStageClear,
+  previewMissionClaimMock,
   previewInventoryActionMock,
   claimIdleMockPreview,
   clearGachaPreviewMock,
   runGachaMockPreview,
   resetGachaPityMock,
+  resetIdleMissionMock,
   updateFormationMock,
   updateSkillLoadoutMock,
 } from "@/state/gameStateActions";
@@ -20,6 +24,7 @@ import { validateCoreGameStateSave } from "@/state/saveValidation";
 import type { CellId } from "@/types/game";
 import type { ProcessedStageProgressResult } from "@/engine/progression";
 import type { InventoryEngineResult } from "@/engine/inventory";
+import type { MissionPreview } from "@/engine/idle";
 
 type GameStateContextValue = {
   state: CoreGameState;
@@ -34,6 +39,10 @@ type GameStateContextValue = {
   processMockStageClear: (processedResult: ProcessedStageProgressResult) => void;
   previewInventoryActionMock: (result: InventoryEngineResult) => void;
   claimIdleMockPreview: () => void;
+  previewIdleClaimMock: () => void;
+  previewAutoFarmMock: () => void;
+  previewMissionClaimMock: (mission: MissionPreview) => void;
+  resetIdleMissionMock: () => void;
   runGachaMockPreview: () => void;
   resetGachaPityMock: () => void;
   clearGachaPreviewMock: () => void;
@@ -115,6 +124,18 @@ export function GameStateProvider({ children }: { children: ReactNode }) {
       },
       claimIdleMockPreview: () => {
         setState((current) => claimIdleMockPreview(current));
+      },
+      previewIdleClaimMock: () => {
+        setState((current) => previewIdleClaimMock(current));
+      },
+      previewAutoFarmMock: () => {
+        setState((current) => previewAutoFarmMock(current));
+      },
+      previewMissionClaimMock: (mission) => {
+        setState((current) => previewMissionClaimMock(current, mission));
+      },
+      resetIdleMissionMock: () => {
+        setState((current) => resetIdleMissionMock(current));
       },
       runGachaMockPreview: () => {
         setState((current) => runGachaMockPreview(current));

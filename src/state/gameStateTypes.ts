@@ -1,5 +1,6 @@
 import type { CellId, ClassName, LaunchStatus } from "@/types/game";
 import type { GachaEngineResult } from "@/engine/gacha";
+import type { IdleMissionPreview } from "@/engine/idle";
 import type { InventoryGearItem, InventoryMaterial, MailboxPreviewItem } from "@/data/mockInventory";
 import type { InventoryEngineResult } from "@/engine/inventory";
 
@@ -144,6 +145,11 @@ export type IdleState = {
   autoFarmFreePerDay: number;
   autoFarmUsedToday: number;
   extraAutoFarmPrices: readonly number[];
+  bangkokBusinessDate: string;
+  bangkokWeekKey: string;
+  dailyMissionClaimedPreview: string[];
+  weeklyMissionClaimedPreview: string[];
+  lastIdleMissionPreview: IdleMissionPreview | null;
 };
 
 export type GachaState = {
