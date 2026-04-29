@@ -7,7 +7,7 @@ import type {
   GrowthStatBlock,
   MainCharacter,
   StatBlock,
-} from "@/types/game";
+} from "../types/game";
 
 type ClassStatTemplate = {
   base: StatBlock;

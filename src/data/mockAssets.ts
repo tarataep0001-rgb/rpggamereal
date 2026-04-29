@@ -959,6 +959,18 @@ export const mockAssets: MockAssetReference[] = [
     "icon_gacha_locked_paid",
     "icon_gacha_locked_box_2",
     "icon_gacha_locked_box_3",
+    "icon_gacha_roll_preview",
+    "icon_gacha_result",
+    "icon_gacha_seed",
+    "icon_gacha_recovery",
+    "icon_gacha_refund_mock",
+    "icon_gacha_finalized",
+    "icon_gacha_duplicate",
+    "icon_gacha_new_unlock",
+    "icon_gacha_star_preview",
+    "icon_gacha_no_paid_gem",
+    "icon_gacha_no_wld",
+    "icon_gacha_no_ledger",
   ].map((assetId) =>
     asset({
       asset_id: assetId,

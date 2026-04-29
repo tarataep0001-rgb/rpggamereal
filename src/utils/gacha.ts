@@ -40,7 +40,7 @@ export function getDuplicateShardValue(grade: Exclude<CharacterGrade, "Epic">): 
 
 export function getBoxStatusText(box: GachaBox): string {
   if (box.enabled) {
-    return "Box 1 เปิดใน V1A";
+    return "กาชา Box 1 เปิดใน V1A";
   }
 
   return box.id === "box_2_internal" ? "Box 2 ยังไม่เปิดใน V1A" : "Box 3 ยังไม่เปิด";

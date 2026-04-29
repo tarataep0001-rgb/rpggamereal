@@ -1,17 +1,29 @@
+"use client";
+
 import { DuplicateShardPanel } from "@/components/game/DuplicateShardPanel";
 import { GachaBoxCard } from "@/components/game/GachaBoxCard";
 import { GachaCharacterPool } from "@/components/game/GachaCharacterPool";
 import { GachaLogPreview } from "@/components/game/GachaLogPreview";
 import { GachaOddsTable } from "@/components/game/GachaOddsTable";
 import { GachaPityPanel } from "@/components/game/GachaPityPanel";
-import { LockedFeaturePanel } from "@/components/game/LockedFeaturePanel";
+import { GachaRecoveryRulePanel } from "@/components/game/GachaRecoveryRulePanel";
+import { GachaResultPreview } from "@/components/game/GachaResultPreview";
+import { GachaRollPreviewPanel } from "@/components/game/GachaRollPreviewPanel";
+import { GachaSafetyPanel } from "@/components/game/GachaSafetyPanel";
+import { GachaShardPreviewPanel } from "@/components/game/GachaShardPreviewPanel";
+import { GachaValidationPanel } from "@/components/game/GachaValidationPanel";
 import { FeatureLockBadge } from "@/components/ui/FeatureLockBadge";
 import { GameCard } from "@/components/ui/GameCard";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { box1PityPreview, gachaBoxes } from "@/data/mockGacha";
+import { gachaBoxes } from "@/data/mockGacha";
+import { createMockGachaInput, validateGachaInput } from "@/engine/gacha";
+import { useGameState } from "@/state/gameStateStore";
 
 export function GachaScreen() {
+  const { clearGachaPreviewMock, resetGachaPityMock, runGachaMockPreview, state } = useGameState();
   const boxOne = gachaBoxes[0];
+  const preview = state.gacha.lastRollPreview;
+  const validation = preview?.validation ?? validateGachaInput(createMockGachaInput({ state }));
 
   return (
     <div className="space-y-4 px-4">
@@ -22,38 +34,42 @@ export function GachaScreen() {
             V1A mock only
           </span>
         </div>
+        <div className="mt-3 grid gap-2 text-sm text-slate-300">
+          <p>กาชา Box 1 เปิดใน V1A</p>
+          <p>ใช้ Free/Test Gem เท่านั้น</p>
+          <p>Paid Gem Gacha ยังไม่เปิด</p>
+          <p>ระบบนี้เป็น local mock preview เท่านั้น</p>
+        </div>
         <div className="mt-3 flex flex-wrap gap-2">
           <FeatureLockBadge label="Box 1 เปิดใน V1A" status="enabled" />
-          <FeatureLockBadge label="ใช้ Free/Test Gem เท่านั้น" status="enabled" />
-          <FeatureLockBadge label="สุ่มครั้งเดียวเท่านั้น" status="enabled" />
-          <FeatureLockBadge label="Paid Gem Gacha ยังไม่เปิด" status="disabled" />
+          <FeatureLockBadge label="Free/Test Gem only" status="enabled" />
+          <FeatureLockBadge label="single pull only" status="enabled" />
+          <FeatureLockBadge label="Paid Gem disabled" status="disabled" />
         </div>
       </GameCard>
 
+      <GachaRollPreviewPanel
+        onClearPreview={clearGachaPreviewMock}
+        onPreviewPull={runGachaMockPreview}
+        onResetPity={resetGachaPityMock}
+        preview={preview}
+      />
+      <GachaResultPreview preview={preview} />
+      <GachaPityPanel
+        guaranteedTriggered={preview?.pity_snapshot_before.guaranteed_triggered}
+        pityAfter={preview?.pity_snapshot_after.pulls_since_last_rare}
+        pityLimit={state.gacha.pity.pityLimit}
+        pullsSinceLastRare={state.gacha.pity.pullsSinceLastRare}
+      />
+      <GachaShardPreviewPanel preview={preview?.shard_preview ?? null} />
       <GachaBoxCard box={boxOne} />
       <GachaOddsTable box={boxOne} />
       <GachaCharacterPool pool={boxOne.pool} />
-      <GachaPityPanel
-        pityLimit={box1PityPreview.pityLimit}
-        pullsSinceLastRare={box1PityPreview.pullsSinceLastRare}
-      />
       <DuplicateShardPanel />
-      <LockedFeaturePanel
-        eyebrow="Locked Gacha"
-        items={[
-          {
-            label: "Box 2 ยังไม่เปิดใน V1A",
-            status: "internal-test",
-            note: "Box 2 disabled/internal test only.",
-          },
-          { label: "Box 3 ยังไม่เปิด", status: "disabled" },
-          { label: "Paid Gem Gacha ยังไม่เปิด", status: "disabled" },
-          { label: "Multi-pull disabled/schema only", status: "schema-only" },
-          { label: "No real money logic", status: "disabled" },
-        ]}
-        title="V1A locked gacha state"
-      />
-      <GachaLogPreview />
+      <GachaLogPreview logPreview={preview?.log_preview ?? null} />
+      <GachaRecoveryRulePanel recoveryPolicy={preview?.log_preview.recovery_policy ?? null} />
+      <GachaValidationPanel validation={validation} />
+      <GachaSafetyPanel />
     </div>
   );
 }

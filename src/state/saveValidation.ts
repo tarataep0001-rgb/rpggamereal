@@ -34,9 +34,15 @@ export function validateCoreGameStateSave(state: CoreGameState): SaveValidationR
   if (state.featureFlags.enableWldWithdraw !== false) errors.push("WLD withdraw must stay disabled.");
   if (state.featureFlags.enableWldRewardRanking !== false) errors.push("WLD reward ranking must stay disabled.");
   if (state.featureFlags.enablePaidGemGacha !== false) errors.push("Paid Gem gacha must stay disabled.");
+  if (state.featureFlags.enableBox2 !== false) errors.push("Box 2 must stay disabled except internal test.");
+  if (state.featureFlags.enableBox3 !== false) errors.push("Box 3 must stay disabled.");
   if (state.featureFlags.enableClass2 !== false) errors.push("Class 2 must not be live in V1A.");
   if (state.featureFlags.enableClass3 !== false) errors.push("Class 3 must remain schema-only in V1A.");
   if (state.featureFlags.enableWldGuildReward !== false) errors.push("WLD guild reward must stay disabled.");
+  if (state.gacha.activeBoxId !== "box_1_v1a") errors.push("V1A gacha active box must be Box 1.");
+  if (state.gacha.paidGemGachaDisabled !== true) errors.push("Paid Gem gacha disabled snapshot must stay true.");
+  if (state.gacha.box2Disabled !== true) errors.push("Box 2 disabled snapshot must stay true.");
+  if (state.gacha.box3Disabled !== true) errors.push("Box 3 disabled snapshot must stay true.");
 
   if (state.inventory.inventorySlots < 0) errors.push("Inventory slots cannot be negative.");
   if (state.inventory.usedInventorySlots < 0) errors.push("Used inventory slots cannot be negative.");

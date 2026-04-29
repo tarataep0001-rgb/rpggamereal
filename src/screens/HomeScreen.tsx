@@ -1,5 +1,6 @@
 import type { ScreenId } from "@/types/game";
 import { CharacterProgressSummary } from "@/components/game/CharacterProgressSummary";
+import { GachaHomeSummary } from "@/components/game/GachaHomeSummary";
 import { SaveStatusPanel } from "@/components/game/SaveStatusPanel";
 import { SaveWarningPanel } from "@/components/game/SaveWarningPanel";
 import { StageProgressSummary } from "@/components/game/StageProgressSummary";
@@ -31,6 +32,7 @@ export function HomeScreen({ onNavigate }: HomeScreenProps) {
       <SaveStatusPanel />
       <CharacterProgressSummary compact progression={characterProgressionPreview} />
       <StageProgressSummary compact progress={stageProgressPreview} />
+      <GachaHomeSummary onNavigate={onNavigate} />
       <CurrencySummaryCard />
       <MainCharacterPreviewCard />
       <TeamSnapshotCard onNavigate={onNavigate} />

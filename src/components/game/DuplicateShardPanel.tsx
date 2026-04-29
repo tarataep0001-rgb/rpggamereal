@@ -21,7 +21,7 @@ export function DuplicateShardPanel() {
         <p>Duplicate จะกลายเป็น Shard</p>
         <p>First pull unlocks character. Star system applies to teammates only.</p>
         <p>If Star 5 already, extra shards are stored.</p>
-        <p>Shard exchange disabled/schema only in V1A.</p>
+        <p>Shard Exchange ยังไม่เปิดใน V1A</p>
       </div>
     </GameCard>
   );

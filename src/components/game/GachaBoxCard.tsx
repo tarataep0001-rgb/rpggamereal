@@ -37,7 +37,7 @@ export function GachaBoxCard({ box }: GachaBoxCardProps) {
       <div className="mt-4 flex flex-wrap gap-2">
         <RewardCurrencyBadge label="Currency" value={box.currency} tone="blue" />
         <RewardCurrencyBadge label="Single pull" value={box.singlePullEnabled ? "mock" : "locked"} />
-        <RewardCurrencyBadge label="Multi-pull" value="locked" tone="red" />
+        <RewardCurrencyBadge label="Multi-pull" value="schema-only" tone="red" />
       </div>
       <div className="mt-4 grid grid-cols-3 gap-2">
         {Object.entries(box.rates).map(([grade, rate]) => (
@@ -54,10 +54,12 @@ export function GachaBoxCard({ box }: GachaBoxCardProps) {
           value={box.pityState.currentCounter}
         />
       </div>
-      <button className="mt-4 w-full rounded-2xl border border-amber-300/40 bg-amber-400/15 px-4 py-3 text-sm font-bold text-amber-100">
-        สุ่มครั้งเดียวเท่านั้น (mock)
-      </button>
-      <p className="mt-3 text-xs text-rose-100">Paid Gem Gacha ยังไม่เปิด / no real money logic.</p>
+      <div className="mt-4 rounded-xl border border-amber-300/30 bg-amber-400/10 px-4 py-3 text-sm font-bold text-amber-100">
+        สุ่มครั้งเดียวเท่านั้น (mock preview)
+      </div>
+      <p className="mt-3 text-xs text-rose-100">
+        Paid Gem Gacha ยังไม่เปิด / no real money logic.
+      </p>
     </GameCard>
   );
 }

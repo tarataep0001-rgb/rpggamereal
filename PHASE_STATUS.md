@@ -23,7 +23,7 @@
 - Phase 18 - Stage Progress / Reward / Replay System: completed
 - Phase 19 - Character / Skill / Class Progression: completed
 - Phase 20 - Inventory / Equipment / Enhancement / Salvage: completed
-- Phase 21 - Gacha / Shard / Pity System: pending
+- Phase 21 - Gacha / Shard / Pity System: completed
 - Phase 22 - Idle / Auto Farm / Mission System: pending
 - Phase 23 - Guild / Guild Boss System: pending
 - Phase 24 - Admin / Audit / Config / Safety Flags: pending

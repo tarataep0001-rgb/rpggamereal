@@ -10,8 +10,8 @@ type GachaOddsTableProps = {
 export function GachaOddsTable({ box }: GachaOddsTableProps) {
   return (
     <GameCard>
-      <SectionTitle eyebrow="Odds Table" title="Box 1 odds snapshot" />
-      <div className="overflow-hidden rounded-2xl border border-white/10">
+      <SectionTitle eyebrow="Odds Snapshot" title="Box 1 odds snapshot" />
+      <div className="overflow-hidden rounded-xl border border-white/10">
         <div className="grid grid-cols-3 bg-white/[0.06] px-3 py-2 text-xs font-bold text-slate-300">
           <span>Grade</span>
           <span>Total rate</span>
@@ -34,7 +34,7 @@ export function GachaOddsTable({ box }: GachaOddsTableProps) {
         })}
       </div>
       <p className="mt-4 text-sm leading-6 text-slate-300">
-        odds_snapshot mock notice: ข้อมูลเรทกาชาเป็น mock สำหรับ prototype เท่านั้น
+        odds_snapshot mock: Common 70%, Uncommon 25%, Rare 5%. Within each grade, characters use equal weight.
       </p>
     </GameCard>
   );

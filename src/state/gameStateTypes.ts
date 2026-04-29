@@ -1,4 +1,5 @@
 import type { CellId, ClassName, LaunchStatus } from "@/types/game";
+import type { GachaEngineResult } from "@/engine/gacha";
 import type { InventoryGearItem, InventoryMaterial, MailboxPreviewItem } from "@/data/mockInventory";
 import type { InventoryEngineResult } from "@/engine/inventory";
 
@@ -156,7 +157,10 @@ export type GachaState = {
     logId: string;
     resultCharacterId: string;
     grade: string;
+    seed?: string;
+    shardGain?: number;
   }>;
+  lastRollPreview: GachaEngineResult | null;
   paidGemGachaDisabled: true;
   box2Disabled: true;
   box3Disabled: true;

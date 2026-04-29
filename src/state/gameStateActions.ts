@@ -1,6 +1,7 @@
 import type { CellId } from "@/types/game";
 import { initialGameState } from "@/state/initialGameState";
 import type { CoreGameState } from "@/state/gameStateTypes";
+import { createMockGachaInput, runSinglePull } from "@/engine/gacha";
 import type { InventoryEngineResult } from "@/engine/inventory";
 import type { ProcessedStageProgressResult } from "@/engine/progression";
 import { applyLocalStageProgressPreview } from "@/engine/progression";
@@ -84,25 +85,52 @@ export function claimIdleMockPreview(state: CoreGameState): CoreGameState {
 }
 
 export function runGachaMockPreview(state: CoreGameState): CoreGameState {
+  const seed = `phase21-local-mock-${state.gacha.pullHistoryPreview.length + 1}-${state.gacha.pity.pullsSinceLastRare}`;
+  const preview = runSinglePull(createMockGachaInput({ seed, state }));
+
   return {
     ...state,
     gacha: {
       ...state.gacha,
       pity: {
         ...state.gacha.pity,
-        pullsSinceLastRare: Math.min(
-          state.gacha.pity.pityLimit,
-          state.gacha.pity.pullsSinceLastRare + 1,
-        ),
+        pullsSinceLastRare: preview.pity_snapshot_after.pulls_since_last_rare,
       },
       pullHistoryPreview: [
         {
-          logId: `mock_preview_${state.gacha.pullHistoryPreview.length + 1}`,
-          resultCharacterId: "ch_common_priest_light_aid",
-          grade: "Common",
+          logId: preview.log_preview.gacha_log_id,
+          resultCharacterId: preview.result.character_id,
+          grade: preview.result.grade,
+          seed: preview.seed,
+          shardGain: preview.shard_preview.shard_gain,
         },
         ...state.gacha.pullHistoryPreview.slice(0, 4),
       ],
+      lastRollPreview: preview,
+    },
+  };
+}
+
+export function resetGachaPityMock(state: CoreGameState): CoreGameState {
+  return {
+    ...state,
+    gacha: {
+      ...state.gacha,
+      pity: {
+        ...state.gacha.pity,
+        pullsSinceLastRare: 0,
+      },
+    },
+  };
+}
+
+export function clearGachaPreviewMock(state: CoreGameState): CoreGameState {
+  return {
+    ...state,
+    gacha: {
+      ...state.gacha,
+      pullHistoryPreview: [],
+      lastRollPreview: null,
     },
   };
 }

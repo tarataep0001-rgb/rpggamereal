@@ -9,7 +9,9 @@ import {
   processMockStageClear,
   previewInventoryActionMock,
   claimIdleMockPreview,
+  clearGachaPreviewMock,
   runGachaMockPreview,
+  resetGachaPityMock,
   updateFormationMock,
   updateSkillLoadoutMock,
 } from "@/state/gameStateActions";
@@ -33,6 +35,8 @@ type GameStateContextValue = {
   previewInventoryActionMock: (result: InventoryEngineResult) => void;
   claimIdleMockPreview: () => void;
   runGachaMockPreview: () => void;
+  resetGachaPityMock: () => void;
+  clearGachaPreviewMock: () => void;
 };
 
 const GameStateContext = createContext<GameStateContextValue | null>(null);
@@ -114,6 +118,12 @@ export function GameStateProvider({ children }: { children: ReactNode }) {
       },
       runGachaMockPreview: () => {
         setState((current) => runGachaMockPreview(current));
+      },
+      resetGachaPityMock: () => {
+        setState((current) => resetGachaPityMock(current));
+      },
+      clearGachaPreviewMock: () => {
+        setState((current) => clearGachaPreviewMock(current));
       },
     }),
     [runtime, state],

@@ -1,28 +1,9 @@
-import type { GachaBox, GachaLogPreview, GachaPoolEntry } from "@/types/game";
+import type { GachaBox, GachaLogPreview, GachaPoolEntry } from "../types/game";
+import { V1A_BOX1_GRADE_RATES, V1A_BOX1_POOL_IDS, V1A_GACHA_BOX_IDS } from "../config/gachaConfig";
 
-const commonIds = [
-  "ch_common_sword_fire_guard",
-  "ch_common_archer_wind_shot",
-  "ch_common_thief_dark_cut",
-  "ch_common_priest_light_aid",
-  "ch_common_mage_fire_spark",
-] as const;
-
-const uncommonIds = [
-  "ch_uncommon_sword_earth_guard",
-  "ch_uncommon_archer_fire_burst",
-  "ch_uncommon_thief_wind_dash",
-  "ch_uncommon_priest_water_care",
-  "ch_uncommon_mage_water_wave",
-] as const;
-
-const rareIds = [
-  "ch_rare_sword_light_vanguard",
-  "ch_rare_archer_wind_hunter",
-  "ch_rare_thief_dark_stalker",
-  "ch_rare_priest_light_oracle",
-  "ch_rare_mage_earth_sage",
-] as const;
+const commonIds = V1A_BOX1_POOL_IDS.Common;
+const uncommonIds = V1A_BOX1_POOL_IDS.Uncommon;
+const rareIds = V1A_BOX1_POOL_IDS.Rare;
 
 const commonPool: GachaPoolEntry[] = commonIds.map((character_id) => ({
   character_id,
@@ -68,16 +49,14 @@ export const duplicateShardRules = [
 
 export const gachaBoxes: GachaBox[] = [
   {
-    id: "box_1_v1a",
+    id: V1A_GACHA_BOX_IDS.box1,
     name: "Box 1 - V1A Free/Test Pool",
     enabled: true,
     currency: "Free/Test Gem",
     singlePullEnabled: true,
     multiPullEnabled: false,
     rates: {
-      Common: 70,
-      Uncommon: 25,
-      Rare: 5,
+      ...V1A_BOX1_GRADE_RATES,
     },
     pool: [...commonPool, ...uncommonPool, ...rarePool],
     pityState: {
@@ -91,7 +70,7 @@ export const gachaBoxes: GachaBox[] = [
     paidGemDisabled: true,
   },
   {
-    id: "box_2_internal",
+    id: V1A_GACHA_BOX_IDS.box2,
     name: "Box 2 - Internal Test Only",
     enabled: false,
     currency: "Free/Test Gem",
@@ -108,7 +87,7 @@ export const gachaBoxes: GachaBox[] = [
     paidGemDisabled: true,
   },
   {
-    id: "box_3_disabled",
+    id: V1A_GACHA_BOX_IDS.box3,
     name: "Box 3 - Disabled",
     enabled: false,
     currency: "Paid Gem",
@@ -129,7 +108,7 @@ export const gachaBoxes: GachaBox[] = [
 export const paidGemGachaEnabled = false;
 
 export const gachaLogPreview: GachaLogPreview & {
-  status: "mock-finalized";
+  status: "finalized_mock";
   oddsSnapshot: string;
   pitySnapshotBefore: string;
   currencySpendSnapshot: string;
@@ -141,7 +120,7 @@ export const gachaLogPreview: GachaLogPreview & {
   grade: "Common",
   pityCounterBefore: 12,
   pityCounterAfter: 13,
-  status: "mock-finalized",
+  status: "finalized_mock",
   oddsSnapshot: "Common 70 / Uncommon 25 / Rare 5, per-character equal within grade",
   pitySnapshotBefore: "pulls_since_last_rare=12",
   currencySpendSnapshot: "Free/Test Gem x1, no Paid Gem, no ledger",

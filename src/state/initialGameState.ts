@@ -1,6 +1,7 @@
 import { featureFlagsConfig } from "@/config/featureFlagsConfig";
 import { box1GachaCharacters, mainCharacter, mockCharacters } from "@/data/mockCharacters";
 import { gachaBoxes, gachaLogPreview } from "@/data/mockGacha";
+import { createMockGachaInput, runSinglePull } from "@/engine/gacha";
 import { mockGuild } from "@/data/mockGuild";
 import { mockIdle } from "@/data/mockIdle";
 import { mockInventory } from "@/data/mockInventory";
@@ -90,6 +91,12 @@ export function createInitialGameState(): CoreGameState {
   const metadata = createMetadata();
   const deployedUnits = deployedUnitsFromCharacters(mockCharacters);
   const gachaBox1 = gachaBoxes.find((box) => box.id === "box_1_v1a") ?? gachaBoxes[0];
+  const initialGachaPreview = runSinglePull(
+    createMockGachaInput({
+      seed: "phase21-initial-local-mock",
+      pullsSinceLastRare: gachaBox1.pityState.currentCounter,
+    }),
+  );
 
   const state: CoreGameState = {
     metadata,
@@ -225,8 +232,11 @@ export function createInitialGameState(): CoreGameState {
           logId: gachaLogPreview.logId,
           resultCharacterId: gachaLogPreview.resultCharacterId,
           grade: gachaLogPreview.grade,
+          seed: initialGachaPreview.seed,
+          shardGain: initialGachaPreview.shard_preview.shard_gain,
         },
       ],
+      lastRollPreview: initialGachaPreview,
       paidGemGachaDisabled: true,
       box2Disabled: true,
       box3Disabled: true,
