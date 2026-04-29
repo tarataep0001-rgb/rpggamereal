@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useMemo, useState, type ReactNode } from "react";
+import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import { initialGameState } from "@/state/initialGameState";
 import type { CoreGameState, GameStateRuntimeStatus } from "@/state/gameStateTypes";
 import {
@@ -50,18 +50,36 @@ type GameStateContextValue = {
 
 const GameStateContext = createContext<GameStateContextValue | null>(null);
 
-function createRuntime(state: CoreGameState): GameStateRuntimeStatus {
+function createInitialRuntime(state: CoreGameState): GameStateRuntimeStatus {
   return {
-    storageAvailable: typeof window !== "undefined" && typeof window.localStorage !== "undefined",
-    lastAction: "initial mock state",
+    storageAvailable: false,
+    storageChecked: false,
+    lastAction: "Checking browser storage for local mock save.",
     lastSavedAt: null,
-    validation: validateCoreGameStateSave(state),
+    validation: {
+      ...validateCoreGameStateSave(state),
+      checked_at: "local-mock-initial-check",
+    },
   };
 }
 
 export function GameStateProvider({ children }: { children: ReactNode }) {
   const [state, setState] = useState<CoreGameState>(initialGameState);
-  const [runtime, setRuntime] = useState<GameStateRuntimeStatus>(() => createRuntime(initialGameState));
+  const [runtime, setRuntime] = useState<GameStateRuntimeStatus>(() => createInitialRuntime(initialGameState));
+
+  useEffect(() => {
+    const timeoutId = window.setTimeout(() => {
+      setRuntime((current) => ({
+        ...current,
+        storageAvailable: typeof window.localStorage !== "undefined",
+        storageChecked: true,
+        lastAction: current.lastAction === "Checking browser storage for local mock save." ? "Initial mock state." : current.lastAction,
+        validation: validateCoreGameStateSave(initialGameState),
+      }));
+    }, 0);
+
+    return () => window.clearTimeout(timeoutId);
+  }, []);
 
   const value = useMemo<GameStateContextValue>(
     () => ({
@@ -72,6 +90,7 @@ export function GameStateProvider({ children }: { children: ReactNode }) {
         setState(result.state);
         setRuntime({
           storageAvailable: result.storageAvailable,
+          storageChecked: true,
           lastAction: result.message,
           lastSavedAt: result.loaded ? result.state.metadata.updated_at : runtime.lastSavedAt,
           validation: validateCoreGameStateSave(result.state),
@@ -82,6 +101,7 @@ export function GameStateProvider({ children }: { children: ReactNode }) {
         setState(result.state);
         setRuntime({
           storageAvailable: result.storageAvailable,
+          storageChecked: true,
           lastAction: result.message,
           lastSavedAt: result.loaded ? result.state.metadata.updated_at : null,
           validation: validateCoreGameStateSave(result.state),
@@ -92,6 +112,7 @@ export function GameStateProvider({ children }: { children: ReactNode }) {
         setState(result.state);
         setRuntime({
           storageAvailable: result.storageAvailable,
+          storageChecked: true,
           lastAction: result.message,
           lastSavedAt: null,
           validation: validateCoreGameStateSave(result.state),
@@ -102,6 +123,7 @@ export function GameStateProvider({ children }: { children: ReactNode }) {
         setState(nextState);
         setRuntime({
           storageAvailable: runtime.storageAvailable,
+          storageChecked: runtime.storageChecked,
           lastAction: "Hydrated from local mock data.",
           lastSavedAt: runtime.lastSavedAt,
           validation: validateCoreGameStateSave(nextState),

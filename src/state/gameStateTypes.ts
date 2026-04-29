@@ -215,6 +215,7 @@ export type SaveValidationResult = {
 
 export type GameStateRuntimeStatus = {
   storageAvailable: boolean;
+  storageChecked: boolean;
   lastAction: string;
   lastSavedAt: string | null;
   validation: SaveValidationResult;
